@@ -1,12 +1,13 @@
 package com.rebelscrum.MSUBanner.Application.Controllers;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 @Controller
-public class IndexController {
+public class HomeController {
+
     @RequestMapping("/")
-    String index(){
-        return "index";
-    }
+    public String home() {return "index";}
 }
