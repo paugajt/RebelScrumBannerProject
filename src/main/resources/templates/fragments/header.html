@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head lang="en" th:fragment="head">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
-          rel="stylesheet" media="screen" />
+<head lang="en">
 
-    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
-            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
-
-    <link href="../static/css/empty"
-          th:href="@{/css/empty.css}" rel="stylesheet" media="screen" />
 </head>
 <body>
 
 <div class="containter">
     <div th:fragment="header">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
-                    <ul class="nav navbar-nav">
-                        <li><a href="#" th:href="@{/users}">Users</a> </li>
-                        <li><a href="#" th:href="@{/userer/new}">New User</a> </li>
-                    </ul>
+        <div th:fragment="header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" th:href="@{/users}">Users</a> </li>
+                            <li><a href="#" th:href="@{/userer/new}">New User</a> </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+
 
         <div class="jumbotron">
             <div class="row text-center">
