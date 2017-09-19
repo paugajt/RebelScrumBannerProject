@@ -28,7 +28,7 @@ public class User {
        this.lastName = lastName;
    }
 
-   public String getEmail(String email) {
+   public String getEmail() {
        return email;
    }
 
