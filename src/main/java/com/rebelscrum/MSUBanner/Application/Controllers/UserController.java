@@ -21,7 +21,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping(value ="/users.", method = RequestMethod.GET)
+    @RequestMapping(value ="/users", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("users", userService.listAllUsers());
         return "users";
