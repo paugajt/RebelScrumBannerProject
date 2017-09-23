@@ -11,6 +11,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+    private String userType;
 
 
    public String getFirstName() {
@@ -42,6 +43,14 @@ public class User {
 
    public void setId(Integer id) {
        this.id = id;
+   }
+
+   public void setUserType(String userType) {
+       this.userType = userType;
+   }
+
+   public String getUserType() {
+       return userType;
    }
 
 
