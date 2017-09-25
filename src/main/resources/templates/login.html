@@ -12,7 +12,7 @@
 
     <h2>Login: </h2>
     <div>
-        <form class="form-horizontal" th:object="${user}" th:action="@{/user}" method="post">
+        <form class="form-horizontal" th:object="${user}" th:action="@{/user/login}" method="post">
             <input type="hidden" th:field="*{id}"/>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Email:</label>
