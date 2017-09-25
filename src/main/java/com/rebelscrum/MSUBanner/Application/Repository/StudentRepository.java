@@ -1,4 +1,10 @@
 package com.rebelscrum.MSUBanner.Application.Repository;
 
-public interface StudentRepository {
+import com.rebelscrum.MSUBanner.Application.Entity.Student;
+import org.springframework.data.repository.CrudRepository;
+
+public interface StudentRepository extends CrudRepository<Student, Integer> {
+
+
 }
+
