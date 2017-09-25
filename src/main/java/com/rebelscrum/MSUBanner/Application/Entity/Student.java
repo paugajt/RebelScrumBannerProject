@@ -15,21 +15,21 @@ public class Student extends User {
     public String major() {
         return major;
     }
-    public void setmajor(String major) {
+    public void setMajor(String major) {
         this.major = major;
     }
 
     public Integer creditsEarned(){
         return creditsEarned;
     }
-    public void setcreditsEarned(Integer creditsEarned) {
+    public void setCreditsEarned(Integer creditsEarned) {
         this.creditsEarned = creditsEarned;
     }
 
-    public Integer getcreditLevel(){
+    public Integer getCreditLevel(){
         return creditLevel;
     }
-    public void setcreditLevel(Integer creditLevel) {
+    public void setCreditLevel(Integer creditLevel) {
         this.creditLevel = creditLevel;
     }
 
