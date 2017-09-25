@@ -10,7 +10,7 @@
 <div class="container">
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
 
-    <h2>User Details</h2>
+    <h2>Login: </h2>
     <div>
         <form class="form-horizontal" th:object="${user}" th:action="@{/user}" method="post">
             <input type="hidden" th:field="*{id}"/>
@@ -30,7 +30,6 @@
 
             <div class="row">
                 <button type="submit" class="btn btn-default">Submit</button>
-                <button type="reset" class="btn btn-default">Reset</button>
                 <button type="button" onclick="history.back()" class="btn btn-default">Back</button>
 
             </div>
