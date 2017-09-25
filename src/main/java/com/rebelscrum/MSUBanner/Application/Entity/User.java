@@ -12,6 +12,7 @@ public class User {
     private String lastName;
     private String email;
     private String userType;
+    private String password;
 
 
    public String getFirstName() {
@@ -53,7 +54,7 @@ public class User {
        return userType;
    }
 
-
+   public void setPassword(String password) {this.password = password;}
 
     }
 
