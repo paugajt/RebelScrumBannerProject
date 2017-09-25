@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
+
 @Controller
 public class UserController {
 
@@ -20,29 +21,16 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping("user/new")
-    public String newUser(Model model){
-        model.addAttribute("user", new User());
-        return "userform";
+    @RequestMapping(value ="/users", method = RequestMethod.GET)
+    public String list(Model model) {
+        model.addAttribute("users", userService.listAllUsers());
+        return "users";
     }
-
-/*    @RequestMapping(value = "user", method = RequestMethod.POST)
-    public String saveUser(User user){
-        userService.saveUser(user);
-        return "redirect:/user/" + user.getId();
-    }
-    */
 
     @RequestMapping("user/{id}")
     public String showUser(@PathVariable Integer id, Model model){
         model.addAttribute("user", userService.getUserById(id));
         return "usershow";
-    }
-
-    @RequestMapping(value ="/users", method = RequestMethod.GET)
-    public String list(Model model) {
-        model.addAttribute("users", userService.listAllUsers());
-        return "users";
     }
 
     @RequestMapping("user/edit/{id}")
@@ -51,15 +39,22 @@ public class UserController {
         return "userform";
     }
 
-    @RequestMapping(value = "user", method = RequestMethod.POST)
-    public String save(User user){
+    @RequestMapping("user/new")
+    public String newUser(Model model){
+        model.addAttribute("user", new User());
+        return "userform";
+    }
 
+
+
+  @RequestMapping(value = "user", method = RequestMethod.POST)
+    public String saveUser(User user){
         userService.saveUser(user);
-
         return "redirect:/user/" + user.getId();
     }
 
-    @RequestMapping("product/delete/{id}")
+
+    @RequestMapping("user/delete/{id}")
     public String delete(@PathVariable Integer id){
         userService.deleteUser(id);
         return "redirect:/users";

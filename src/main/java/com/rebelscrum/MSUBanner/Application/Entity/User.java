@@ -11,15 +11,9 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+    private String userType;
+    private String password;
 
-    //protected User() {}
-
-   /* public User(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
-   */
 
    public String getFirstName() {
        return firstName;
@@ -36,7 +30,7 @@ public class User {
        this.lastName = lastName;
    }
 
-   public String getEmail(String email) {
+   public String getEmail() {
        return email;
    }
 
@@ -51,11 +45,16 @@ public class User {
    public void setId(Integer id) {
        this.id = id;
    }
-    @Override
-    public String toString() {
-        return String.format(
-                "User[id=%d, firstName='%s', lastName='%s', email='%s']",
-                id, firstName, lastName, email);
+
+   public void setUserType(String userType) {
+       this.userType = userType;
+   }
+
+   public String getUserType() {
+       return userType;
+   }
+
+   public void setPassword(String password) {this.password = password;}
 
     }
-    }
+

@@ -26,6 +26,7 @@ public class UserLoader implements ApplicationListener<ContextRefreshedEvent> {
         student.setFirstName("Justin");
         student.setLastName("Pauga");
         student.setEmail("jpauga@msudenver.edu");
+        student.setUserType("Student");
         userRepository.save(student);
 
         log.info("Saved Student -id: " + student.getId());
@@ -34,6 +35,7 @@ public class UserLoader implements ApplicationListener<ContextRefreshedEvent> {
         teacher.setFirstName("Steve");
         teacher.setLastName("Beaty");
         teacher.setEmail("sbeaty@msudenver.edu");
+        teacher.setUserType("Professor");
         userRepository.save(teacher);
 
         log.info("Saved Teacher -id: " + teacher.getId());
