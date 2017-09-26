@@ -28,13 +28,13 @@ public class CourseController {
 
     @RequestMapping("course/{id}")
     public String showCourse(@PathVariable Integer id, Model model){
-        model.addAttribute("Course", courseService.getCourseById(id));
+        model.addAttribute("course", courseService.getCourseById(id));
         return "courseshow";
     }
 
     @RequestMapping("course/edit/{id}")
     public String edit(@PathVariable Integer id, Model model){
-        model.addAttribute("Course", courseService.getCourseById(id));
+        model.addAttribute("course", courseService.getCourseById(id));
         return "courseform";
     }
 
