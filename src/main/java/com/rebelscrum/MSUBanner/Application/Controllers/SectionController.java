@@ -24,13 +24,13 @@ public class SectionController {
         return "sections";
     }
 
-    @RequestMapping("section/id")
-    public String showSection(@PathVariable Integer id, Model model) {
+    @RequestMapping("section/{id}")
+    public String showSection(@PathVariable Integer id, Model model){
         model.addAttribute("section", sectionService.getSectionById(id));
         return "sectionshow";
     }
 
-    @RequestMapping("section/edi/{id}")
+    @RequestMapping("section/edit/{id}")
     public String edit(@PathVariable Integer id, Model model) {
         model.addAttribute("section", sectionService.getSectionById(id));
         return "sectionform";
