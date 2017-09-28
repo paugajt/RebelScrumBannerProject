@@ -35,7 +35,6 @@ public class Student extends User {
     public void setCreditLevel(Integer creditLevel) {
         this.creditLevel = creditLevel;
     }
-
     public String getFirstName() {
         return firstName;
     }
@@ -66,8 +65,6 @@ public class Student extends User {
     public void setId(Integer id) {
         this.id = id;
     }
-
-
 
 
 }

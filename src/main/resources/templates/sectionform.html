@@ -10,31 +10,30 @@
 <div class="container">
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
 
-    <h2>User Details</h2>
+    <h2>Section Details</h2>
     <div>
-        <form class="form-horizontal">
+        <form class="form-horizontal" th:object="${section}" th:action="@{/section}" method="post">
+            <input type="hidden" th:field="*{id}"/>
+
             <div class="form-group">
-                <label class="col-sm-2 control-label">First Name:</label>
+                <label class="col-sm-2 control-label">Course:</label>
                 <div class="col-sm-10">
-                    <p class="form-control-static" th:text="${user.firstName}">First Name</p></div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Last Name:</label>
-                <div class="col-sm-10">
-                    <p class="form-control-static" th:text="${user.lastName}">Last Name</p>
+                    <input type="text" class="form-control" th:field="*{course}"/>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Email:</label>
+                <label class="col-sm-2 control-label">Professor</label>
                 <div class="col-sm-10">
-                    <p class="form-control-static" th:text="${user.email}">Email</p>
+                    <input type="text" class="form-control" th:field="*{professor}"/>
                 </div>
             </div>
+
 
             <div class="row">
+                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="reset" class="btn btn-default">Reset</button>
                 <button type="button" onclick="history.back()" class="btn btn-default">Back</button>
             </div>
-
         </form>
     </div>
 </div>
