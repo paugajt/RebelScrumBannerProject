@@ -1,8 +1,6 @@
 package com.rebelscrum.MSUBanner.Application.Loader;
 
-import com.rebelscrum.MSUBanner.Application.Entity.Course;
 import com.rebelscrum.MSUBanner.Application.Entity.User;
-import com.rebelscrum.MSUBanner.Application.Repository.CourseRepository;
 import com.rebelscrum.MSUBanner.Application.Repository.UserRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
