@@ -28,6 +28,7 @@ public class StudentLoader implements ApplicationListener<ContextRefreshedEvent>
         one.setEmail("jpauga@msudenver.edu");
         one.setCreditLevel(20);
         one.setCreditsEarned(30);
+        one.setMajor("Computer Science");
         studentRepository.save(one);
 
         log.info("Saved Student -id: " + one.getId());
