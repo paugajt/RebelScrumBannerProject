@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Entity
 public class User {
     @Id
-
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
     private String firstName;
@@ -36,13 +35,7 @@ public class User {
    }
 
    public void setEmail(String email) {
-
-       if (email.contains("@")){
-           this.email = email;
-       }
-       else {
-
-       }
+       this.email = email;
    }
 
    public Integer getId(){
@@ -60,7 +53,6 @@ public class User {
    public String getUserType() {
        return userType;
    }
-
 
    public void setPassword(String password) {this.password = password;}
 
