@@ -18,7 +18,6 @@ public class UserLoader implements ApplicationListener<ContextRefreshedEvent> {
     public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
@@ -39,6 +38,5 @@ public class UserLoader implements ApplicationListener<ContextRefreshedEvent> {
         userRepository.save(teacher);
 
         log.info("Saved Teacher -id: " + teacher.getId());
-
     }
 }

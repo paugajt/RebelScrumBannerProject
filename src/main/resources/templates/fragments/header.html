@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
-
 </head>
 <body>
 
@@ -9,6 +8,15 @@
     <div th:fragment="header">
         <div th:fragment="header">
             <nav class="navbar navbar-default">
+       <!--         <div class="dropdown">
+                    <button class="dropbtn">Dropdown</button>
+                    <div class="dropdown-content">
+                        <a href="../usershow.html" th:href="@{/users}">Users</a>
+                        <a href="../userform.html" th:href="@{/user/new}">New Users</a>
+                        <a href="../adminform.html" th:href="@{/admin/new}">New Administrators</a>
+                    </div>
+                </div>
+        -->
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
@@ -16,6 +24,9 @@
                             <li><a href="../login.html" th:href="@{/user/login}">Login</a> </li>
                             <li><a href="../usershow.html" th:href="@{/users}">Users</a> </li>
                             <li><a href="../userform.html" th:href="@{/user/new}">New User</a> </li>
+                            <li><a href="../admins.html" th:href="@{/admins}">Administrators</a> </li>
+                            <li><a href="../adminform.html" th:href="@{/admin/new}">New Administrator</a> </li>
+
                         </ul>
                     </div>
                 </div>
