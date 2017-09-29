@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 
 @Entity
-public class Student extends User {
+public class Student {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
@@ -18,6 +18,7 @@ public class Student extends User {
     public String getMajor() {
         return major;
     }
+
     public void setMajor(String major) {
         this.major = major;
     }
@@ -25,6 +26,7 @@ public class Student extends User {
     public Integer getCreditsEarned(){
         return creditsEarned;
     }
+
     public void setCreditsEarned(Integer creditsEarned) {
         this.creditsEarned = creditsEarned;
     }
@@ -32,12 +34,15 @@ public class Student extends User {
     public Integer getCreditLevel(){
         return creditLevel;
     }
+
     public void setCreditLevel(Integer creditLevel) {
         this.creditLevel = creditLevel;
     }
+
     public String getFirstName() {
         return firstName;
     }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
