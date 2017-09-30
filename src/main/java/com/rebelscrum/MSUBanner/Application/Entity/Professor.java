@@ -12,13 +12,25 @@ public class Professor extends User{
     private String lastName;
     private String email;
     private String userType;
-    private String[] currentCourses;
+    private String currentCourses;
     private String department;
     private String officeLocation;
 
 
-    public String[] getCurrentCourses() { return currentCourses; }
-    public void setCurrentCourses(String[] currentCourses) {
+    public String getFirstName() {return firstName;}
+    public void setFirstName(String firstname) {this.firstName = firstname;}
+
+    public String getLastName() {return lastName;}
+    public void setLastName(String lastName) {this.lastName = lastName;}
+
+    public String getEmail() {return email;}
+    public void setEmail(String email) {this.email = email;}
+
+    public String getUserType() {return userType;}
+    public void setUserType(String userType) {this.userType = userType;}
+
+    public String getCurrentCourses() { return currentCourses; }
+    public void setCurrentCourses(String currentCourses) {
         this.currentCourses = currentCourses;
     }
 
@@ -35,6 +47,9 @@ public class Professor extends User{
     public void setOfficeLocation(String officeLocation) {
         this.officeLocation = officeLocation;
     }
+
+    public Integer getId() {return id;}
+    public void setId(Integer id) {this.id = id;}
 
 
 }
