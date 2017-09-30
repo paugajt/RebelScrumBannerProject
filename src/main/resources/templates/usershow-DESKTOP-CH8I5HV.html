@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Rebel Scrum</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h2>User Details</h2>
+    <div>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">First Name:</label>
+                <div class="col-sm-2">
+                    <p class="form-control-static" th:text="${user.firstName}">First Name</p></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Last Name:</label>
+                <div class="col-sm-2">
+                    <p class="form-control-static" th:text="${user.lastName}">Last Name</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Email:</label>
+                <div class="col-sm-2">
+                    <p class="form-control-static" th:text="${user.email}">Email</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Status</label>
+                <div class="col-sm-2">
+                    <p class="form-control-static" th:text="${user.userType}">Status</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <button type="button" onclick="history.back()" class="btn btn-default">Back</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
