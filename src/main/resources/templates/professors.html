@@ -28,6 +28,7 @@
             </tr>
             <tr th:each="professor : ${professors}">
                 <td th:text="${professor.id}"><a href="/professor/${professor.id}">Id</a></td>
+                <td th:text="${professor.userType}">Status</td>
                 <td th:text="${professor.firstName}">First Name</td>
                 <td th:text="${professor.lastName}">Last Name</td>
                 <td th:text="${professor.email}">Email</td>
