@@ -3,7 +3,21 @@
 <head lang="en">
 </head>
 <body>
-
+<div class="image">
+    <div th:fragment="header">
+        <div th:fragment="header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <div class="row text-left">
+                            <img th:src="@{/images/MsuDenverLogo.jpg}" width="250"/>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div th:fragment="header">
         <div th:fragment="header">
@@ -43,20 +57,6 @@
                 </div>
 
             </nav>
-        </div>
-
-
-        <div class="jumbotron">
-            <div class="row text-center">
-                <div class="">
-                    <h2>Rebel Scrum</h2>
-                    <h3>MSU Denver Banner Project</h3>
-                </div>
-            </div>
-            <div class="row text-center">
-                <img src="../../static/images/msulogo.jpg" width="400"
-                     th:src="@{/images/Rebel Scrum Logo v3.jpg}"/>
-            </div>
         </div>
     </div>
 </div>
