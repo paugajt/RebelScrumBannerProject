@@ -36,7 +36,12 @@ public class Admin extends User{
     }
 
     public void setEmail(String email) {
-        this.email = email;
+
+        if (email.contains("@")){
+            this.email = email;
+        }
+        else
+            this.email = null;
     }
 
     public Integer getId(){
