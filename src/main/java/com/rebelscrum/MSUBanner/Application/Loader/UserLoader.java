@@ -18,25 +18,28 @@ public class UserLoader implements ApplicationListener<ContextRefreshedEvent> {
     public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
-        User student = new User();
-        student.setFirstName("Justin");
-        student.setLastName("Pauga");
-        student.setEmail("jpauga@msudenver.edu");
-        userRepository.save(student);
+        User test = new User();
+        test.setFirstName("Justin");
+        test.setLastName("Pauga");
+        test.setEmail("jpauga@msudenver.edu");
+        test.setUserType("test");
+        test.setPassword("password");
 
-        log.info("Saved Student -id: " + student.getId());
+        userRepository.save(test);
+
+        log.info("Saved user -id: " + test.getId());
 
         User teacher = new User();
         teacher.setFirstName("Steve");
         teacher.setLastName("Beaty");
         teacher.setEmail("sbeaty@msudenver.edu");
+        teacher.setUserType("Professor");
+        teacher.setPassword("password");
         userRepository.save(teacher);
 
         log.info("Saved Teacher -id: " + teacher.getId());
-
     }
 }

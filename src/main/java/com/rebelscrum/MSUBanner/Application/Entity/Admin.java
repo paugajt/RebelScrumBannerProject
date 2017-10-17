@@ -4,45 +4,21 @@ import javax.persistence.*;
 
 
 @Entity
-public class Student extends User{
+public class Admin extends User{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
     private String firstName;
     private String lastName;
     private String email;
-    private String major;
-    private Integer creditsEarned;
-    private Integer creditLevel;
+    private String adminType;
+    private String department;
+    private String password;
 
-    public String getMajor() {
-        return major;
-    }
-
-    public void setMajor(String major) {
-        this.major = major;
-    }
-
-    public Integer getCreditsEarned(){
-        return creditsEarned;
-    }
-
-    public void setCreditsEarned(Integer creditsEarned) {
-        this.creditsEarned = creditsEarned;
-    }
-
-    public Integer getCreditLevel(){
-        return creditLevel;
-    }
-
-    public void setCreditLevel(Integer creditLevel) {
-        this.creditLevel = creditLevel;
-    }
 
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -60,7 +36,12 @@ public class Student extends User{
     }
 
     public void setEmail(String email) {
-        this.email = email;
+
+        if (email.contains("@")){
+            this.email = email;
+        }
+        else
+            this.email = null;
     }
 
     public Integer getId(){
@@ -71,6 +52,28 @@ public class Student extends User{
         this.id = id;
     }
 
+
+    public String getAdminType() {
+        return adminType;
+    }
+    public void setAdminType(String adminType) {
+        this.adminType = adminType;
+    }
+
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {this.password = password;}
 
 }
 

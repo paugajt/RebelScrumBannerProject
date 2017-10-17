@@ -12,6 +12,8 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+    private String userType;
+    private String password;
 
 
    public String getFirstName() {
@@ -38,9 +40,9 @@ public class User {
        if (email.contains("@")){
            this.email = email;
        }
-       else {
+       else
+           this.email = null;
 
-       }
    }
 
    public Integer getId(){
@@ -51,6 +53,16 @@ public class User {
        this.id = id;
    }
 
+   public void setUserType(String userType) {
+       this.userType = userType;
+   }
+
+   public String getUserType() {
+       return userType;
+   }
+
+
+   public void setPassword(String password) {this.password = password;}
 
     }
 

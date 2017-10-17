@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
-
 </head>
 <body>
-
-<div class="containter">
+<div class="image">
     <div th:fragment="header">
         <div th:fragment="header">
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
+<<<<<<< HEAD
+                        <div class="row text-left">
+                            <img th:src="@{/images/MsuDenverLogo.jpg}" width="250"/>
+                        </div>
+=======
                         <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
                         <ul class="nav navbar-nav">
                             <li><a href="../users.html" th:href="@{/users}">Users</a> </li>
@@ -21,23 +24,52 @@
                             <li><a href="../sections.html" th:href="@{/sections}">Sections</a> </li>
                             <li><a href="../sectionform.html" th:href="@{/section/new}">New Section</a> </li>
                         </ul>
+>>>>>>> 54342373a3fda8fad6d16c39fbd3892930c5e2f0
                     </div>
                 </div>
             </nav>
         </div>
-
-
-        <div class="jumbotron">
-            <div class="row text-center">
-                <div class="">
-                    <h2>Rebel Scrum</h2>
-                    <h3>MSU Denver Banner Project</h3>
+    </div>
+</div>
+<div class="container">
+    <div th:fragment="header">
+        <div th:fragment="header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Student</button>
+                        <div class="dropdown-content">
+                            <a href="../studentshow.html" th:href="@{/students}">Students</a>
+                            <a href="../studentform.html" th:href="@{/student/new}">New Student</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Professor</button>
+                        <div class="dropdown-content">
+                            <a href="../professorshow.html" th:href="@{/professors}">Professors</a>
+                            <a href="../professorform.html" th:href="@{/professor/new}">New Professor</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Administrator</button>
+                        <div class="dropdown-content">
+                            <a href="../admins.html" th:href="@{/admins}">Administrators</a>
+                            <a href="../adminform.html" th:href="@{/admin/new}">New Administrator</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Course</button>
+                        <div class="dropdown-content">
+                            <a href="../courses.html" th:href="@{/courses}">Courses</a>
+                            <a href="../courseform.html" th:href="@{/course/new}">New Course</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row text-center">
-                <img src="../../static/images/msulogo.jpg" width="400"
-                     th:src="@{/images/Rebel Scrum Logo v3.jpg}"/>
-            </div>
+
+            </nav>
         </div>
     </div>
 </div>

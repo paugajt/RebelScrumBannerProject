@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Rebel Scrum</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/header.css" th:href="@{/css/header.css}" />
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <div th:if="${not #lists.isEmpty(professors)}">
+        <h2>Professor List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Office Location</th>
+
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="professor : ${professors}">
+                <td th:text="${professor.id}"><a href="/professor/${professor.id}">Id</a></td>
+                <td th:text="${professor.userType}">Status</td>
+                <td th:text="${professor.firstName}">First Name</td>
+                <td th:text="${professor.lastName}">Last Name</td>
+                <td th:text="${professor.email}">Email</td>
+                <td th:text="${professor.department}">Department</td>
+                <td th:text="${professor.officeLocation}">Office Location</td>
+                <td><a th:href="${ '/professor/' + professor.id}">View</a></td>
+                <td><a th:href="${'/professor/edit/' + professor.id}">Edit</a></td>
+                <td><a th:href="${'/professor/delete/' + professor.id}">Delete</a> </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
