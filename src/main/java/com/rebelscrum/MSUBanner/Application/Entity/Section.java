@@ -7,12 +7,12 @@ public class Section {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(nullable = false)
-
+    private Integer id;
     @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;
 
-    private Integer id;
+
 
     
     // These are suppose to be real Course and Professor types such as 'private Professor professor';
@@ -21,8 +21,7 @@ public class Section {
     //  @OneToOne
     // The annotation will need to know what is the foriegin key that you are trying to join with this so you
     //  @JoinColumn(name="") <-- the name is the column name of what you have defined as the foregin key in the professor/course entity
-    
-    private String course;
+
 
     private String professor;
 

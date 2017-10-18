@@ -8,10 +8,11 @@ import java.util.Set;
 public class Course {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-
+    @Column(nullable = false)
+    private Integer id;
 
     private Set<Section> sections;
-    private Integer id;
+
     private String courseName;
     private String department;
     private String creditLevel;
@@ -22,9 +23,9 @@ public class Course {
 
 
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
-    public Set<Section> getSections() {return sections}
+    public Set<Section> getSections() {return sections;}
 
-    public void setSections(Set<Section> sections) {this.Sections = sections;}
+    public void setSections(Set<Section> sections) {this.sections = sections;}
 
     public  void setCourseName(String courseName) {this.courseName = courseName;}
 
