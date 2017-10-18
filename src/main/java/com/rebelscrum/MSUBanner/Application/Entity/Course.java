@@ -2,11 +2,15 @@ package com.rebelscrum.MSUBanner.Application.Entity;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Course {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+
+    @OneToMany(mappedBy = "course")
+    private List<Section> sections;
     private Integer id;
     private String courseName;
     private String department;

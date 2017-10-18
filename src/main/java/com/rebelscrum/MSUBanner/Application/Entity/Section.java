@@ -6,18 +6,23 @@ import javax.persistence.*;
 public class Section {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(nullable = false)
+
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
+
     private Integer id;
-    private String course;
+
     private String professor;
 
     public Integer getId() {return id;}
 
     public void setId(Integer id) {this.id = id;}
 
-    public String getCourse() {return course;}
+    public String getCourse() {return course.getCourseName();}
 
-
-    public void setCourse(String course) {this.course = course;}
+    public void setCourse(Course course) {this.course = course;}
 
     public String getProfessor() {return professor;}
 

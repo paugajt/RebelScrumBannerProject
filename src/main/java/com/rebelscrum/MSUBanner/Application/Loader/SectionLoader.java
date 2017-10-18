@@ -21,7 +21,7 @@ public class SectionLoader implements ApplicationListener<ContextRefreshedEvent>
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         Section section = new Section();
-        section.setCourse("Software Development");
+        section.setCourse();
         section.setProfessor("Steve Beaty");
         sectionRepository.save(section);
 
