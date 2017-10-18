@@ -2,15 +2,15 @@ package com.rebelscrum.MSUBanner.Application.Entity;
 
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Course {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 
-    @OneToMany(mappedBy = "course")
-    private List<Section> sections;
+
+    private Set<Section> sections;
     private Integer id;
     private String courseName;
     private String department;
@@ -19,6 +19,12 @@ public class Course {
     private String learningObjectives;
     private String coReqs;
     private String semester;
+
+
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    public Set<Section> getSections() {return sections}
+
+    public void setSections(Set<Section> sections) {this.Sections = sections;}
 
     public  void setCourseName(String courseName) {this.courseName = courseName;}
 
