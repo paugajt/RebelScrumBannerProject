@@ -23,6 +23,7 @@ public class BuildingLoader implements ApplicationListener<ContextRefreshedEvent
         Building test = new Building();
         test.setBuildingName("Science");
         test.setAddress("100 MSU Dr.");
+        test.setRoomCount(10);
 
         buildingRepository.save(test);
 
