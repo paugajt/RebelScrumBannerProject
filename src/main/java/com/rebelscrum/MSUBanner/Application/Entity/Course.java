@@ -10,7 +10,9 @@ public class Course {
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(nullable = false)
     private Integer id;
-
+    
+    // The annotation goes here not on the getter setter
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private Set<Section> sections;
 
     private String courseName;
@@ -22,7 +24,7 @@ public class Course {
     private String semester;
 
 
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    //@OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     public Set<Section> getSections() {return sections;}
 
     public void setSections(Set<Section> sections) {this.sections = sections;}
