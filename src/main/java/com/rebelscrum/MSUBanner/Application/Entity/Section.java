@@ -8,6 +8,7 @@ public class Section {
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(nullable = false)
     private Integer id;
+    // This is suppose to be OneToOne 
     @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;
