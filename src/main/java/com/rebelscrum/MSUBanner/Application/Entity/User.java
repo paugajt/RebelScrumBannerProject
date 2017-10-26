@@ -40,9 +40,9 @@ public class User {
        if (email.contains("@")){
            this.email = email;
        }
-       else {
+       else
+           this.email = null;
 
-       }
    }
 
    public Integer getId(){
