@@ -7,20 +7,27 @@ public class Section {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-    private String course;
-    private String professor;
+    private Object Course;
+    private Object Professor;
 
     public Integer getId() {return id;}
 
     public void setId(Integer id) {this.id = id;}
 
-    public String getCourse() {return course;}
+    public Object getCourse() {
+        return Course;
+    }
 
+    public void setCourse(Object course) {
+        this.Course = course;
+    }
 
-    public void setCourse(String course) {this.course = course;}
+    public Object getProfessor() {
+        return Professor;
+    }
 
-    public String getProfessor() {return professor;}
-
-    public void setProfessor(String professor) {this.professor = professor;}
+    public void setProfessor(Object professor) {
+        this.Professor = professor;
+    }
 }
 
