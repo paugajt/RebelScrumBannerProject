@@ -21,6 +21,7 @@ public class RoomLoader implements ApplicationListener<ContextRefreshedEvent> {
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
         Room test = new Room();
+        test.setRoomNum(1010);
         test.setSeats(50);
 
         roomRepository.save(test);

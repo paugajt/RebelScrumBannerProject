@@ -1,6 +1,7 @@
 package com.rebelscrum.MSUBanner.Application.Loader;
 
 import com.rebelscrum.MSUBanner.Application.Entity.Building;
+import com.rebelscrum.MSUBanner.Application.Entity.Room;
 import com.rebelscrum.MSUBanner.Application.Repository.BuildingRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,13 @@ public class BuildingLoader implements ApplicationListener<ContextRefreshedEvent
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
         Building test = new Building();
+        Room testRoom = new Room();
+        testRoom.setSeats(50);
+        testRoom.setRoomNum(1010);
         test.setBuildingName("Science");
         test.setAddress("100 MSU Dr.");
+        test.addDepartment("Computer Science");
+        test.addRoom(testRoom);
 
         buildingRepository.save(test);
 
