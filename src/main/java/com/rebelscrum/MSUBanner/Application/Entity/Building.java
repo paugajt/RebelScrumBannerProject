@@ -1,6 +1,7 @@
 package com.rebelscrum.MSUBanner.Application.Entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 @Entity
 public class Building {
@@ -9,8 +10,8 @@ public class Building {
     private Integer id;
     private String buildingName;
     private String address;
-    private Room[] roomList;
-    private String[] departments;
+    private ArrayList<Room> roomList = new ArrayList<>();
+    private ArrayList<String> departmentList = new ArrayList<>();
 
     public  void setId(Integer id) {this.id = id;}
     public Integer getId() {return id;}
@@ -21,10 +22,17 @@ public class Building {
     public  void setAddress(String address) {this.address = address;}
     public String getAddress() {return address;}
 
-    public void setRoomList(Room[] roomList){this.roomList = roomList;}
-    public Room[] getRoomList() {return roomList;}
+    public void addRoom(Room room){
+        this.roomList.add(room);
+    }
+    public ArrayList<Room> getRoomList(){
+        return roomList;
+    }
 
-    public  void setDepartments(String[] departments) {this.departments = departments;}
-    public String[] getDepartments() {return departments;}
-
+    public void addDepartment(String department){
+        this.departmentList.add(department);
+    }
+    public ArrayList<String> getDepartmentList() {
+        return departmentList;
+    }
 }
