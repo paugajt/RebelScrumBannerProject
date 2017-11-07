@@ -33,11 +33,40 @@ public class Schedule {
     public int getTime() {return time; }
 
     public void addCourse(Course course){
-        this.courseList.add(course);
+        if (conflicts(course) == false){
+            this.courseList.add(course);
+        }
+        else{
+            //Error occurred, couldn't be added to schedule due to conflicts.
+            //Need to put an alert in the HTML
+
+        }
     }
 
     public ArrayList<Course> getCourseList(){
         return courseList;
+    }
+
+    //Checks time and day conflicts for course to be added against courses already in course list
+    public boolean conflicts(Course courseToAdd){
+        boolean checkDays = true;
+        boolean checkTimes = true;
+        for (int i = 0; i < courseList.size(); i++){
+            if (courseToAdd.getDays() != courseList.get(i).getDays()){
+                checkDays = false;
+            }
+
+            if (!(courseToAdd.getTimeStart() > courseList.get(i).getTimeStart()) &&
+		!(courseToAdd.getTimeEnd() < courseList.get(i).getTimeEnd())){
+                checkTimes = false;
+            }
+
+            if (checkDays && checkTimes){
+                return true;
+            }
+
+        }
+        return false;
     }
 
  }
