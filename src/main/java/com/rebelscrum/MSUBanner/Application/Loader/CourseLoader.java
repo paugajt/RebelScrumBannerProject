@@ -19,6 +19,8 @@ public class CourseLoader implements ApplicationListener<ContextRefreshedEvent> 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
+	Room test2 = new Room();
+        Building test1 = new Building();
         Course test = new Course();
         test.setCourseName("Software Development");
         test.setCoReqs("Computer org 2");
@@ -30,6 +32,12 @@ public class CourseLoader implements ApplicationListener<ContextRefreshedEvent> 
                 " environment");
         test.setSemester("Fall");
         courseRepository.save(test);
+	test.setDays("MW");
+        test.setTimeStart(1200);
+        test.setTimeEnd(1350);
+        test.setBuilding(test1);
+        test.setRoom(test2);
+
 
         log.info("Saved Course -id: " + test.getId());
     }
