@@ -18,13 +18,20 @@ public class Professor extends User{
 
 
     public String getFirstName() {return firstName;}
-    public void setFirstName(String firstname) {this.firstName = firstname;}
+    public void setFirstName(String firstName) {this.firstName = firstName;}
 
     public String getLastName() {return lastName;}
     public void setLastName(String lastName) {this.lastName = lastName;}
 
     public String getEmail() {return email;}
-    public void setEmail(String email) {this.email = email;}
+    public void setEmail(String email) {
+
+        if (email.contains("@")){
+            this.email = email;
+        }
+        else
+            this.email = null;
+    }
 
     public String getUserType() {return userType;}
     public void setUserType(String userType) {this.userType = userType;}

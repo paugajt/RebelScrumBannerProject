@@ -15,7 +15,6 @@ public class User {
     private String userType;
     private String password;
 
-
    public String getFirstName() {
        return firstName;
    }
@@ -40,9 +39,9 @@ public class User {
        if (email.contains("@")){
            this.email = email;
        }
-       else {
+       else
+           this.email = null;
 
-       }
    }
 
    public Integer getId(){
