@@ -11,7 +11,7 @@ public class Admin extends User{
     private String firstName;
     private String lastName;
     private String email;
-    private String adminType;
+    private final String USER_TYPE = "Administrator";
     private String department;
     private String password;
 
@@ -48,11 +48,8 @@ public class Admin extends User{
     }
 
 
-    public String getAdminType() {
-        return adminType;
-    }
-    public void setAdminType(String adminType) {
-        this.adminType = adminType;
+    public String getUserType() {
+        return USER_TYPE;
     }
 
 
@@ -64,6 +61,7 @@ public class Admin extends User{
         this.department = department;
     }
 
+    
     public String getPassword() {
         return password;
     }

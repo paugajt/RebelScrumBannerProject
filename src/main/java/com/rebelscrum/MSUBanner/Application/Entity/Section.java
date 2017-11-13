@@ -1,31 +1,23 @@
 package com.rebelscrum.MSUBanner.Application.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
 public class Section {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(nullable = false)
+    @Column(name ="section_id", nullable = false)
     private Integer id;
-    // This is suppose to be OneToOne 
     @ManyToOne
-    @JoinColumn(name = "course_id")
+    @JsonBackReference
     private Course course;
 
+    @ManyToOne
+    private Professor professor;
 
-
-    
-    // These are suppose to be real Course and Professor types such as 'private Professor professor';
-    // Once you add the the real types you need to add OneToOne annotation here which says 'each section has 
-    // one professor and one course'
-    //  @OneToOne
-    // The annotation will need to know what is the foriegin key that you are trying to join with this so you
-    //  @JoinColumn(name="") <-- the name is the column name of what you have defined as the foregin key in the professor/course entity
-
-
-    private String professor;
-
+    //Getters and setters
     public Integer getId() {return id;}
 
     public void setId(Integer id) {this.id = id;}
@@ -34,8 +26,8 @@ public class Section {
 
     public void setCourse(Course course) {this.course = course;}
 
-    public String getProfessor() {return professor;}
+    public String getProfessor() {return professor.getFirstName();}
 
-    public void setProfessor(String professor) {this.professor = professor;}
+    public void setProfessor(Professor professor) {this.professor = professor;}
 }
 

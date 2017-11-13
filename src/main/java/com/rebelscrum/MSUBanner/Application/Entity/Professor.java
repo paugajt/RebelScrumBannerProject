@@ -1,21 +1,30 @@
 package com.rebelscrum.MSUBanner.Application.Entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
 public class Professor extends User{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "professor_id", nullable = false)
     private Integer id;
     private String firstName;
     private String lastName;
     private String email;
-    private String userType;
-    private String currentCourses;
+    private final String USER_TYPE = "Professor";
+    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
+    @JoinColumn(name = "section_id")
+    private Set<Section> sections;
     private String department;
     private String officeLocation;
 
+
+
+    public Set<Section> getSections() {return sections;}
+
+    public void setSections(Set<Section> sections) {this.sections = sections;}
 
     public String getFirstName() {return firstName;}
     public void setFirstName(String firstname) {this.firstName = firstname;}
@@ -26,13 +35,7 @@ public class Professor extends User{
     public String getEmail() {return email;}
     public void setEmail(String email) {this.email = email;}
 
-    public String getUserType() {return userType;}
-    public void setUserType(String userType) {this.userType = userType;}
-
-    public String getCurrentCourses() { return currentCourses; }
-    public void setCurrentCourses(String currentCourses) {
-        this.currentCourses = currentCourses;
-    }
+    public String getUserType() {return USER_TYPE;}
 
     public String getDepartment() {
         return department;
