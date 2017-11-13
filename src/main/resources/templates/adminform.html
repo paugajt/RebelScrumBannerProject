@@ -44,11 +44,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Department:</label>
                     <div class="col-sm-10">
-                        <select name="departmentName" class="custom-select" id="departmentName" th:field="*{department}">
-                            <option value="Science">Science</option>
-                            <option value="Math">Math</option>
-                            <option value="Computer Science">Computer Science</option>
-                        </select>
+                        <input th:type="text" class="form-control" th:field="*{department}"/>
                     </div>
                 </div>
                 <div class="row">

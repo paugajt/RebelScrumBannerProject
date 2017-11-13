@@ -10,6 +10,8 @@ public class Building {
     private Integer id;
     private String buildingName;
     private String address;
+    @OneToMany(mappedBy = "building")
+    @JoinColumn(name = "room_num")
     private ArrayList<Room> roomList = new ArrayList<>();
     private ArrayList<String> departmentList = new ArrayList<>();
 

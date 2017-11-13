@@ -9,6 +9,8 @@ public class Room {
     private Integer id;
     private Integer roomNum;
     private Integer seats;
+    @ManyToOne
+    private Building building;
 
     public  void setId(Integer id) {this.id = id;}
     public Integer getId() {return id;}
@@ -18,5 +20,8 @@ public class Room {
 
     public  void setSeats(Integer seats) {this.seats = seats;}
     public Integer getSeats() {return seats;}
+
+    public void setBuilding(Building building) {this.building = building;}
+    public String getBuilding() {return building.getBuildingName();}
 
 }

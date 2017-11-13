@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xlms ="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
 
     <title>Rebel Scrum</title>
@@ -14,51 +14,47 @@
     <div>
         <form class="form-horizontal" th:object="${course}" th:action="@{/course}" method="post">
             <input type="hidden" th:field="*{id}"/>
+
             <div class="form-group">
                 <label class="col-sm-2 control-label">Course Name:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" th:field="*{courseName}"/>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="col-sm-2 control-label">Semester:</label>
                 <div class="col-sm-10">
-                    <select name="semesterName" class="custom-select" id="semesterName" th:field="*{semester}">
-                        <option value="Fall">Fall</option>
-                        <option value="Spring">Spring</option>
-                        <option value="Summer">Summer</option>
-                    </select>
+                    <input th:type="text" class="form-control" th:field="*{semester}"/>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="col-sm-2 control-label">Department:</label>
                 <div class="col-sm-10">
-                    <select name="departmentName" class="custom-select" id="departmentName" th:field="*{department}">
-                        <option value="Science">Science</option>
-                        <option value="Math">Math</option>
-                        <option value="Computer Science">Computer Science</option>
-                    </select>
+                    <input type="text" class="form-control" th:field="*{department}"/>
                 </div>
             </div>
-
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Credit Level:</label>
+                <div class="col-sm-10">
+                    <input th:type="text" class="form-control" th:field="*{creditLevel}"/>
+                </div>
+            </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Description:</label>
                 <div class="col-sm-10">
                     <input th:type="text" class="form-control" th:field="*{description}"/>
                 </div>
             </div>
-
             <div class="form-group">
-                <label class="col-sm-2 control-label">Credit:</label>
+                <label class="col-sm-2 control-label">Credit Level:</label>
                 <div class="col-sm-10">
-                    <select name="creditValue" class="custom-select" id="creditValue" th:field = "*{creditLevel}">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
+                    <input th:type="text" class="form-control" th:field="*{creditLevel}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Course Description:</label>
+                <div class="col-sm-10">
+                    <input th:type="text" class="form-control" th:field="*{description}"/>
                 </div>
             </div>
             <div class="form-group">

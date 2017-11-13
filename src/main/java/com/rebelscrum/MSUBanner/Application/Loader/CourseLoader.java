@@ -7,10 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
-import org.springframework.ui.Model;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class CourseLoader implements ApplicationListener<ContextRefreshedEvent> {
@@ -18,9 +14,7 @@ public class CourseLoader implements ApplicationListener<ContextRefreshedEvent> 
     private Logger log = Logger.getLogger(CourseLoader.class);
 
     @Autowired
-    public void setCourseRepository(CourseRepository courseRepository) {
-        this.courseRepository = courseRepository;
-    }
+    public void setCourseRepository(CourseRepository courseRepository) {this.courseRepository = courseRepository;}
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -40,13 +34,4 @@ public class CourseLoader implements ApplicationListener<ContextRefreshedEvent> 
         log.info("Saved Course -id: " + test.getId());
     }
 
-    private void initModelList(Model model) {
-        List<String> semesterName = new ArrayList<String>();
-        semesterName.add("Fall");
-        semesterName.add("Spring");
-
-        model.addAttribute("Semester", semesterName);
-
-    }
 }
-

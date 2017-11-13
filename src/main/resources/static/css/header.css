@@ -39,7 +39,6 @@
     background-color: #00447c;
 }
 .image
-
 .container { display: inline; height: 600px; width: 150px; margin: 2px; padding: 16px; float: left; background-color: #ffffff; border: 0px solid #ffffff; }
 .thumb a { display: inline; width: 150px; height: 150px; padding: 1px; background-color: #ffffff; }
 .thumb a:hover { background-color: black }

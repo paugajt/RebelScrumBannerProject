@@ -1,8 +1,5 @@
 package com.rebelscrum.MSUBanner.Application.Entity;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 
 
@@ -10,21 +7,74 @@ import javax.persistence.*;
 public class Student extends User{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Setter @Getter
     private Integer id;
-    @Setter @Getter
     private String firstName;
-    @Setter @Getter
     private String lastName;
-    @Setter @Getter
     private String email;
-    @Setter @Getter
     private String major;
-    @Setter @Getter
+    private final String USER_TYPE = "Student";
     private Integer creditsEarned;
-    @Setter @Getter
     private Integer creditLevel;
 
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public Integer getCreditsEarned(){
+        return creditsEarned;
+    }
+
+    public void setCreditsEarned(Integer creditsEarned) {
+        this.creditsEarned = creditsEarned;
+    }
+
+    public Integer getCreditLevel(){
+        return creditLevel;
+    }
+
+    public void setCreditLevel(Integer creditLevel) {
+        this.creditLevel = creditLevel;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Integer getId(){
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUserType(){
+        return USER_TYPE;
+    }
 
 
 }
