@@ -22,7 +22,7 @@ public class SectionLoader implements ApplicationListener<ContextRefreshedEvent>
     public void onApplicationEvent(ContextRefreshedEvent event) {
         Section section = new Section();
         //section.setCourse();
-        section.setProfessor("Steve Beaty");
+        //section.setProfessor("Steve Beaty");
         sectionRepository.save(section);
 
         log.info("Saved Section -id:" + section.getId());

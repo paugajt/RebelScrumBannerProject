@@ -25,7 +25,7 @@ public class ProfessorLoader implements ApplicationListener<ContextRefreshedEven
         test.setLastName("Beaty");
         test.setEmail("sbeaty@msudenver.edu");
         test.setDepartment("Computer Science");
-        test.setCurrentCourses("SW Dev, OS");
+        //test.setCurrentCourses("SW Dev, OS");
         test.setOfficeLocation("AES 218");
 
         professorRepository.save(test);
