@@ -61,7 +61,7 @@ public class Admin extends User{
         this.department = department;
     }
 
-    
+
     public String getPassword() {
         return password;
     }
