@@ -3,6 +3,7 @@ package com.rebelscrum.MSUBanner.Application.Entity;
 
 import javax.persistence.*;
 import java.util.Set;
+import java.util.ArrayList;
 
 @Entity
 public class Course {
@@ -23,6 +24,12 @@ public class Course {
     private String learningObjectives;
     private String coReqs;
     private String semester;
+    private String days;
+    private int timeStart;
+    private int timeEnd;
+    private Building building;
+    private Room room;
+    private ArrayList<Course> allCourses = new ArrayList<>();
 
 
     public Set<Section> getSections() {return sections;}
@@ -63,6 +70,68 @@ public class Course {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public void setDays(String days) {this.days = days;}
+
+    public String getDays() {return days;}
+
+    public void setTimeStart(int timeStart){this.timeStart = timeStart;}
+
+    public int getTimeStart() {return timeStart;}
+
+    public void setTimeEnd(int timeEnd){this.timeEnd = timeEnd;}
+
+    public int getTimeEnd() {return timeEnd;}
+
+    public Building getBuilding() {return building;}
+
+    public void setBuilding(Building building) {this.building = building;}
+
+    public Room getRoom() {return room;}
+
+    public void setRoom(Room room) {this.room = room;}
+
+    public void addCourseToList(){
+        if (conflicts() == false){
+            allCourses.add(this);
+        }
+        else{
+            //Error occurred, couldn't be added to schedule due to conflicts.
+            //Need to put an alert in the HTML
+
+        }
+    }
+
+    public boolean conflicts(){
+        Course courseToAdd = this;
+        boolean checkDays = true;
+        boolean checkTimes = true;
+        boolean checkRooms = true;
+        for (int i = 0; i < allCourses.size(); i++){
+            if (courseToAdd.getDays() != allCourses.get(i).getDays()){
+                checkDays = false;
+            }
+
+            if (!(courseToAdd.getTimeStart() > allCourses.get(i).getTimeStart()) &&
+		!(courseToAdd.getTimeEnd() < allCourses.get(i).getTimeEnd())){
+                checkTimes = false;
+            }
+
+            if ((courseToAdd.getBuilding() == allCourses.get(i).getBuilding()) &&
+		(courseToAdd.getRoom() == allCourses.get(i).getRoom())){
+                checkRooms = false;
+
+            }
+
+            if (checkDays && checkTimes && checkRooms){
+                return true;
+            }
+
+
+
+        }
+        return false;
     }
 
 }
