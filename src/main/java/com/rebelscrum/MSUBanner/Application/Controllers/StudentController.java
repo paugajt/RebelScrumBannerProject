@@ -57,7 +57,7 @@ public class StudentController {
     @RequestMapping("student/delete/{id}")
     public String delete(@PathVariable Integer id){
         studentService.deleteStudent(id);
-        return "redirect:/student";
+        return "redirect:/students";
     }
 
 

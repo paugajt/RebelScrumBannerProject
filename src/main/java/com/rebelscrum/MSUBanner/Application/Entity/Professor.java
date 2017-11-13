@@ -33,7 +33,14 @@ public class Professor extends User{
     public void setLastName(String lastName) {this.lastName = lastName;}
 
     public String getEmail() {return email;}
-    public void setEmail(String email) {this.email = email;}
+    public void setEmail(String email) {
+
+        if (email.contains("@")){
+            this.email = email;
+        }
+        else
+            this.email = null;
+    }
 
     public String getUserType() {return USER_TYPE;}
 

@@ -10,6 +10,7 @@ public class Section {
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name ="section_id", nullable = false)
     private Integer id;
+
     @ManyToOne
     @JsonBackReference
     private Course course;
@@ -29,5 +30,6 @@ public class Section {
     public String getProfessor() {return professor.getFirstName();}
 
     public void setProfessor(Professor professor) {this.professor = professor;}
+
 }
 

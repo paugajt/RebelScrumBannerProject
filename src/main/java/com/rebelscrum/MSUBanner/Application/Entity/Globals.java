@@ -11,19 +11,19 @@ public class Globals {
     private String status = "";
 
     public String getMyLevel(int n){
-       if (n < FRESHMAN){
+       if (n < FRESHMAN && n>0){
            status = "Freshman";
        }
 
-       if (n < SOPHOMORE){
+       if (n < SOPHOMORE && n>FRESHMAN){
            status = "Sophomore";
        }
 
-       if (n < JUNIOR){
+       if (n < JUNIOR && n>SOPHOMORE){
            status = "Junior";
        }
 
-       if (n < SENIOR){
+       if (n>JUNIOR){
            status = "Senior";
        }
 
