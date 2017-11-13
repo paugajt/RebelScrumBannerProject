@@ -27,7 +27,7 @@ public class Professor extends User{
     public void setSections(Set<Section> sections) {this.sections = sections;}
 
     public String getFirstName() {return firstName;}
-    public void setFirstName(String firstname) {this.firstName = firstname;}
+    public void setFirstName(String firstName) {this.firstName = firstName;}
 
     public String getLastName() {return lastName;}
     public void setLastName(String lastName) {this.lastName = lastName;}
