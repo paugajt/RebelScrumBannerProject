@@ -1,6 +1,7 @@
 package com.rebelscrum.MSUBanner.Application.Entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -15,6 +16,9 @@ public class Student extends User{
     private final String USER_TYPE = "Student";
     private Integer creditsEarned;
     private Integer creditLevel;
+    @OneToMany
+    @JoinColumn(name = "section_id")
+    private Set<Section> sections;
 
     public String getMajor() {
         return major;
@@ -75,6 +79,10 @@ public class Student extends User{
     public String getUserType(){
         return USER_TYPE;
     }
+
+    public Set<Section> getSections() {return sections;}
+
+    public void setSections(Set<Section> sections) {this.sections = sections;}
 
 
 }

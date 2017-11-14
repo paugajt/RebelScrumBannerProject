@@ -18,6 +18,10 @@ public class Section {
     @ManyToOne
     private Professor professor;
 
+    @ManyToMany
+    @JoinColumn(name = "student_id")
+    private Student student;
+
     //Getters and setters
     public Integer getId() {return id;}
 
