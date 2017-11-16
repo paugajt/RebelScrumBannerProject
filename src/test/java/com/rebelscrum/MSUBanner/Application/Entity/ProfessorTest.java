@@ -57,16 +57,6 @@ public class ProfessorTest {
     @Test
     public void getUserType() throws Exception {
         Professor tester = new Professor ();
-        assertNull("This test should pass when there is no User-Type", tester.getUserType());
-        tester.setUserType("The Boss");
-        assertNotNull("The ID doesn't exist",tester.getUserType());
-    }
-
-    @Test
-    public void setUserType() throws Exception {
-        Professor tester = new Professor ();
-        assertNull("This test should pass when there is no User-Type", tester.getUserType());
-        tester.setUserType("The Boss");
         assertNotNull("The ID doesn't exist",tester.getUserType());
     }
 
