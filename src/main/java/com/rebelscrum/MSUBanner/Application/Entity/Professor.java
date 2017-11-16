@@ -14,7 +14,7 @@ public class Professor extends User{
     private String lastName;
     private String email;
     private final String USER_TYPE = "Professor";
-    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
+    @OneToMany//(mappedBy = "professor", cascade = CascadeType.ALL)
     @JoinColumn(name = "section_id")
     private Set<Section> sections;
     private String department;

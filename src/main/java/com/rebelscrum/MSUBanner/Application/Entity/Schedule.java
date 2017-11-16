@@ -2,12 +2,17 @@ package com.rebelscrum.MSUBanner.Application.Entity;
 import javax.persistence.*;
 import java.security.PrivateKey;
 import java.util.ArrayList;
+import java.util.Set;
 
 @Entity
 public class Schedule {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
     private Semester semester;
     private Building building;
-    private ArrayList<Course> courseList= new ArrayList<>();
+    @OneToMany
+    private Set<Course> courseList;
     private String days;
 
     final String MW = "mw";
@@ -31,7 +36,7 @@ public class Schedule {
     public String getTR() {return TR; }
 
     public int getTime() {return time; }
-
+    /*
     public void addCourse(Course course){
         if (conflicts(course) == false){
             this.courseList.add(course);
@@ -68,5 +73,6 @@ public class Schedule {
         }
         return false;
     }
+    */
 
  }

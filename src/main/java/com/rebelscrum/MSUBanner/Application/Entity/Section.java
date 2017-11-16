@@ -3,6 +3,7 @@ package com.rebelscrum.MSUBanner.Application.Entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Section {
@@ -20,7 +21,7 @@ public class Section {
 
     @ManyToMany
     @JoinColumn(name = "student_id")
-    private Student student;
+    private Set<Student> student;
 
     //Getters and setters
     public Integer getId() {return id;}
