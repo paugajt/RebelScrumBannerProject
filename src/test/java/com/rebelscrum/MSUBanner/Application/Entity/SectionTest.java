@@ -5,6 +5,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class SectionTest {
+    Course testCourse = new Course();
+    Professor testProf = new Professor();
     @Test
     public void getId() throws Exception {
         Section tester = new Section ();
@@ -25,7 +27,7 @@ public class SectionTest {
     public void getCourse() throws Exception {
         Section tester = new Section ();
         assertNull("This test should pass when there is no Course", tester.getCourse());
-        tester.setCourse("Software Development Methods & Tools");
+        tester.setCourse (testCourse);
         assertNotNull("The Course doesn't exist",tester.getCourse());
     }
 
@@ -33,7 +35,7 @@ public class SectionTest {
     public void setCourse() throws Exception {
         Section tester = new Section ();
         assertNull("This test should pass when there is no ID", tester.getCourse());
-        tester.setCourse("Software Development Methods & Tools");
+        tester.setCourse(testCourse);
         assertNotNull("The Course doesn't exist",tester.getCourse());
     }
 
@@ -41,7 +43,7 @@ public class SectionTest {
     public void getProfessor() throws Exception {
         Section tester = new Section ();
         assertNull("This test should pass when there is no Professor", tester.getProfessor());
-        tester.setProfessor("Software Development Methods & Tools");
+        tester.setProfessor(testProf);
         assertNotNull("The Professor doesn't exist",tester.getProfessor());
     }
 
@@ -49,7 +51,7 @@ public class SectionTest {
     public void setProfessor() throws Exception {
         Section tester = new Section ();
         assertNull("This test should pass when there is no Professor", tester.getProfessor());
-        tester.setProfessor("Software Development Methods & Tools");
+        tester.setProfessor(testProf);
         assertNotNull("The Professor doesn't exist",tester.getProfessor());
     }
 
