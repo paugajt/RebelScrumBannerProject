@@ -20,7 +20,7 @@ public class CourseLoader implements ApplicationListener<ContextRefreshedEvent> 
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-
+    /*
 	Room test2 = new Room();
         Building test1 = new Building();
         Course test = new Course();
@@ -42,6 +42,7 @@ public class CourseLoader implements ApplicationListener<ContextRefreshedEvent> 
 
 
         log.info("Saved Course -id: " + test.getId());
+        */
     }
 
 }

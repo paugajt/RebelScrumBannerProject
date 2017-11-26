@@ -19,7 +19,8 @@ public class Section {
     @JoinColumn(name = "professor_id")
     private Professor professor;
 
-    @ManyToMany(mappedBy = "section", cascade = CascadeType.ALL)
+    @ManyToMany
+    @JoinColumn(name = "student_id")
     private Set<Student> student;
 
     //Getters and setters

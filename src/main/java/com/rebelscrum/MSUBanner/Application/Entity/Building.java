@@ -13,7 +13,7 @@ public class Building {
     private String address;
     @OneToMany(mappedBy = "building")
     private Set<Room> roomList;
-    private Set<String> departmentList;
+    //private Set<String> departmentList;
 
     public  void setId(Integer id) {this.id = id;}
     public Integer getId() {return id;}

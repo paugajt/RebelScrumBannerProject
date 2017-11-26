@@ -5,7 +5,6 @@ import javax.persistence.*;
 
 @Entity
 public class Admin extends User{
-    private final String USER_TYPE = "Administrator";
     private String department;
     private String password;
 
@@ -36,9 +35,9 @@ public class Admin extends User{
         return super.getId();
     }
 
-
+    public void setUserType() {super.setUserType("Administrator");}
     public String getUserType() {
-        return USER_TYPE;
+        return super.getUserType();
     }
 
 

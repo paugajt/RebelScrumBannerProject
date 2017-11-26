@@ -7,7 +7,6 @@ import java.util.Set;
 @Entity
 public class Student extends User{
     private String major;
-    private final String USER_TYPE = "Student";
     private Integer creditsEarned;
     private Integer creditLevel;
     @OneToMany
@@ -66,9 +65,11 @@ public class Student extends User{
         return super.getId();
     }
 
+    //set usertype as student
+    public void setUserype() {super.setUserType("Student");}
 
     public String getUserType(){
-        return USER_TYPE;
+        return super.getUserType();
     }
 
     public Set<Section> getSections() {return sections;}

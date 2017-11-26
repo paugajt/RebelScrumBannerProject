@@ -14,7 +14,6 @@ public class Course {
     
     // The annotation goes here not on the getter setter
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
-    @JoinColumn(name = "section_id")
     private Set<Section> sections;
 
     private String courseName;
@@ -27,8 +26,8 @@ public class Course {
     private String days;
     private int timeStart;
     private int timeEnd;
-    private Building building;
-    private Room room;
+    //private Building building;
+    //private Room room;
     private ArrayList<Course> allCourses = new ArrayList<>();
 
 
@@ -83,7 +82,7 @@ public class Course {
     public void setTimeEnd(int timeEnd){this.timeEnd = timeEnd;}
 
     public int getTimeEnd() {return timeEnd;}
-
+    /*
     public Building getBuilding() {return building;}
 
     public void setBuilding(Building building) {this.building = building;}
@@ -133,5 +132,5 @@ public class Course {
         }
         return false;
     }
-
+*/
 }
