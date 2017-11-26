@@ -20,7 +20,7 @@ public class BuildingLoader implements ApplicationListener<ContextRefreshedEvent
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-
+/*
         Building test = new Building();
         Room testRoom = new Room();
         testRoom.setSeats(50);
@@ -33,6 +33,7 @@ public class BuildingLoader implements ApplicationListener<ContextRefreshedEvent
         buildingRepository.save(test);
 
         log.info("Saved Building -id: " + test.getId());
+        */
     }
 
 }

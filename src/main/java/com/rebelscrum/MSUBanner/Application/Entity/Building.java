@@ -2,6 +2,7 @@ package com.rebelscrum.MSUBanner.Application.Entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Set;
 
 @Entity
 public class Building {
@@ -11,9 +12,8 @@ public class Building {
     private String buildingName;
     private String address;
     @OneToMany(mappedBy = "building")
-    @JoinColumn(name = "room_num")
-    private ArrayList<Room> roomList = new ArrayList<>();
-    private ArrayList<String> departmentList = new ArrayList<>();
+    private Set<Room> roomList;
+    private Set<String> departmentList;
 
     public  void setId(Integer id) {this.id = id;}
     public Integer getId() {return id;}
@@ -24,6 +24,7 @@ public class Building {
     public  void setAddress(String address) {this.address = address;}
     public String getAddress() {return address;}
 
+    /*
     public void addRoom(Room room){
         this.roomList.add(room);
     }
@@ -37,4 +38,5 @@ public class Building {
     public ArrayList<String> getDepartmentList() {
         return departmentList;
     }
+    */
 }
