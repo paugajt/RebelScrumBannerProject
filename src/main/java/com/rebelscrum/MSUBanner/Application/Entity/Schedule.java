@@ -9,7 +9,10 @@ public class Schedule {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
+    @ManyToOne
     private Semester semester;
+    @OneToOne
+    @JoinColumn(name = "building_id")
     private Building building;
     @OneToMany
     private Set<Course> courseList;

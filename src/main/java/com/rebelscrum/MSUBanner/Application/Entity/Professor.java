@@ -6,7 +6,6 @@ import java.util.Set;
 
 @Entity
 public class Professor extends User{
-    private final String USER_TYPE = "Professor";
     @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
     private Set<Section> sections;
     private String department;
@@ -27,7 +26,8 @@ public class Professor extends User{
     public String getEmail() {return super.getEmail();}
     public void setEmail(String email) {super.setEmail(email);}
 
-    public String getUserType() {return USER_TYPE;}
+    public void setUserType() {super.setUserType("Professor");}
+    public String getUserType() {return super.getUserType();}
 
     public String getDepartment() {
         return department;
