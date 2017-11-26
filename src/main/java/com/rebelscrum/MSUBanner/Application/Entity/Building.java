@@ -11,8 +11,7 @@ public class Building {
     private Integer id;
     private String buildingName;
     private String address;
-    @OneToMany//(mappedBy = "building")
-    @JoinColumn(name = "roomNum")
+    @OneToMany(mappedBy = "building")
     private Set<Room> roomList;
     private Set<String> departmentList;
 

@@ -13,7 +13,7 @@ public class Course {
     private Integer id;
     
     // The annotation goes here not on the getter setter
-    @OneToMany//(mappedBy = "course", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     @JoinColumn(name = "section_id")
     private Set<Section> sections;
 

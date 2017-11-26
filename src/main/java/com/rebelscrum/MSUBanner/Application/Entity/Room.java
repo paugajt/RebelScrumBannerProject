@@ -10,6 +10,7 @@ public class Room {
     private Integer roomNum;
     private Integer seats;
     @ManyToOne
+    @JoinColumn(name = "building_id")
     private Building building;
 
     public  void setId(Integer id) {this.id = id;}

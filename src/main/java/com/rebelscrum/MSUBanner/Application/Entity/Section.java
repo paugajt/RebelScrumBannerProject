@@ -1,6 +1,5 @@
 package com.rebelscrum.MSUBanner.Application.Entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -13,14 +12,14 @@ public class Section {
     private Integer id;
 
     @ManyToOne
-    @JsonBackReference
+    @JoinColumn(name = "course_id")
     private Course course;
 
     @ManyToOne
+    @JoinColumn(name = "professor_id")
     private Professor professor;
 
-    @ManyToMany
-    @JoinColumn(name = "student_id")
+    @ManyToMany(mappedBy = "section", cascade = CascadeType.ALL)
     private Set<Student> student;
 
     //Getters and setters
