@@ -5,56 +5,39 @@ import javax.persistence.*;
 
 @Entity
 public class Admin extends User{
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private final String USER_TYPE = "Administrator";
     private String department;
     private String password;
 
 
     public String getFirstName() {
-        return firstName;
+        return super.getFirstName();
     }
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        super.setFirstName(firstName);
     }
 
     public String getLastName() {
-        return lastName;
+        return super.getLastName();
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        super.setLastName(lastName);
     }
 
     public String getEmail() {
-        return email;
+        return super.getEmail();
     }
 
-    public void setEmail(String email) {
-
-        if (email.contains("@")){
-            this.email = email;
-        }
-        else
-            this.email = null;
+    public void setEmail(String email) {super.setEmail(email);
     }
 
     public Integer getId(){
-        return id;
+        return super.getId();
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-
+    public void setUserType() {super.setUserType("Administrator");}
     public String getUserType() {
-        return USER_TYPE;
+        return super.getUserType();
     }
 
 

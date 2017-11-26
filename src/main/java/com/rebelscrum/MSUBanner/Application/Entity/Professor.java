@@ -6,16 +6,7 @@ import java.util.Set;
 
 @Entity
 public class Professor extends User{
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "professor_id", nullable = false)
-    private Integer id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private final String USER_TYPE = "Professor";
     @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
-    @JoinColumn(name = "section_id")
     private Set<Section> sections;
     private String department;
     private String officeLocation;
@@ -26,23 +17,17 @@ public class Professor extends User{
 
     public void setSections(Set<Section> sections) {this.sections = sections;}
 
-    public String getFirstName() {return firstName;}
-    public void setFirstName(String firstName) {this.firstName = firstName;}
+    public String getFirstName() {return super.getFirstName();}
+    public void setFirstName(String firstName) {super.setFirstName(firstName);}
 
-    public String getLastName() {return lastName;}
-    public void setLastName(String lastName) {this.lastName = lastName;}
+    public String getLastName() {return super.getLastName();}
+    public void setLastName(String lastName) {super.setLastName(lastName);}
 
-    public String getEmail() {return email;}
-    public void setEmail(String email) {
+    public String getEmail() {return super.getEmail();}
+    public void setEmail(String email) {super.setEmail(email);}
 
-        if (email.contains("@")){
-            this.email = email;
-        }
-        else
-            this.email = null;
-    }
-
-    public String getUserType() {return USER_TYPE;}
+    public void setUserType() {super.setUserType("Professor");}
+    public String getUserType() {return super.getUserType();}
 
     public String getDepartment() {
         return department;
@@ -58,8 +43,7 @@ public class Professor extends User{
         this.officeLocation = officeLocation;
     }
 
-    public Integer getId() {return id;}
-    public void setId(Integer id) {this.id = id;}
+    public Integer getId() {return super.getId();}
 
 
 }

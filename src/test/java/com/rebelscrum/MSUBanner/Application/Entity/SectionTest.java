@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class SectionTest {
+    /*
     @Test
     public void getId() throws Exception {
         Section tester = new Section ();
@@ -52,5 +53,5 @@ public class SectionTest {
         tester.setProfessor("Software Development Methods & Tools");
         assertNotNull("The Professor doesn't exist",tester.getProfessor());
     }
-
+*/
 }
