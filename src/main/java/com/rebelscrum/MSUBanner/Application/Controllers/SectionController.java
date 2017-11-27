@@ -54,5 +54,4 @@ public class SectionController {
         return "redirect:/sections";
     }
 
-
 }
