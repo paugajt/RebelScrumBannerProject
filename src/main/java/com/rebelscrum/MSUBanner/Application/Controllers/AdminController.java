@@ -15,22 +15,47 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-
+/**
+ * Admin controller to pass info between database and
+ * html pages
+ */
 @Controller
 public class AdminController {
 
+    /**
+     * Services to be used by hibernate to correctly add
+     * information to the database.
+     */
     private AdminService adminService;
 
+    /**
+     * setter for adminService for mapping
+     * @param adminService
+     */
     @Autowired
     public void setAdminService(AdminService adminService){
         this.adminService = adminService;
     }
 
+    /**
+     *Will pull information from the webpages to update a
+     * building to be store into the database
+     * @param model
+     * @return
+     */
     @RequestMapping(value ="/admins", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("admins", adminService.listAllAdmins());
         return "admins";
     }
+
+    /**
+     * Will pull information from the webpages to update a
+     * building to be store into the database
+     * @param id
+     * @param model
+     * @return
+     */
 
     @RequestMapping("admin/{id}")
     public String showAdmin (@PathVariable Integer id, Model model){
@@ -38,11 +63,26 @@ public class AdminController {
         return "adminshow";
     }
 
+    /**
+     *  Will pull information from the webpages to update a
+     * building to be store into the database
+     * @param id
+     * @param model
+     * @return
+     */
+
     @RequestMapping("admin/edit/{id}")
     public String edit(@PathVariable Integer id, Model model){
         model.addAttribute("admin", adminService.getAdminById(id));
         return "adminform";
     }
+
+    /**
+     *  Will pull information from the webpages to update a
+     * building to be store into the database
+     * @param model
+     * @return
+     */
 
     @RequestMapping("admin/new")
     public String newAdmin (Model model){
@@ -50,16 +90,36 @@ public class AdminController {
         return "adminform";
     }
 
+    /**
+     *  Will pull information from the webpages to update a
+     * building to be store into the database
+     * @return
+     */
+
     @RequestMapping("admin/login")
     public String loginUser(){
         return "login";
     }
+
+    /**
+     *  Will pull information from the webpages to update a
+     * building to be store into the database
+     * @param admin
+     * @return
+     */
 
     @RequestMapping(value = "admin", method = RequestMethod.POST)
     public String saveAdmin(Admin admin){
         adminService.saveAdmin(admin);
         return "redirect:/admin/" + admin.getId();
     }
+
+    /**
+     *  Will pull information from the webpages to update a
+     * building to be store into the database
+     * @param id
+     * @return
+     */
 
 
     @RequestMapping("admin/delete/{id}")

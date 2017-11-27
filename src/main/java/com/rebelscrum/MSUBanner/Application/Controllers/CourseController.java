@@ -9,22 +9,46 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ *
+ */
+
 @Controller
 public class CourseController {
 
-
+    /**
+     *
+     */
     private CourseService courseService;
 
+    /**
+     * Setter for courseService for mapping
+     * @param courseService
+     */
     @Autowired
     public void setCourseService(CourseService courseService){
         this.courseService = courseService;
     }
 
+    /**
+     * * Will pull information from the webpages to create a
+     * new class to be store into the database.
+     * @param model
+     * @return
+     */
     @RequestMapping(value ="/courses", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("courses", courseService.listAllCourses());
         return "courses";
     }
+
+    /**
+     * * Will pull information from the webpages to create a
+     * new class to be store into the database.
+     * @param id
+     * @param model
+     * @return
+     */
 
     @RequestMapping("course/{id}")
     public String showCourse(@PathVariable Integer id, Model model){
@@ -32,11 +56,26 @@ public class CourseController {
         return "courseshow";
     }
 
+    /**
+     * * Will pull information from the webpages to create a
+     * new class to be store into the database.
+     * @param id
+     * @param model
+     * @return
+     */
+
     @RequestMapping("course/edit/{id}")
     public String edit(@PathVariable Integer id, Model model){
         model.addAttribute("course", courseService.getCourseById(id));
         return "courseform";
     }
+
+    /**
+     * * Will pull information from the webpages to create a
+     * new class to be store into the database.
+     * @param model
+     * @return
+     */
 
     @RequestMapping("course/new")
     public String newCourse(Model model){
@@ -44,7 +83,12 @@ public class CourseController {
         return "courseform";
     }
 
-
+    /**
+     * * Will pull information from the webpages to create a
+     * new class to be store into the database.
+     * @param Course
+     * @return
+     */
 
     @RequestMapping(value = "course", method = RequestMethod.POST)
     public String saveCourse(Course Course){
@@ -52,6 +96,12 @@ public class CourseController {
         return "redirect:/course/" + Course.getId();
     }
 
+    /**
+     * * Will pull information from the webpages to create a
+     * new class to be store into the database.
+     * @param id
+     * @return
+     */
 
     @RequestMapping("course/delete/{id}")
     public String delete(@PathVariable Integer id){
