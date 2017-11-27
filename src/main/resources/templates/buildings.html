@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Rebel Scrum</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/header.css" th:href="@{/css/header.css}" />
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <div th:if="${not #lists.isEmpty(buildings)}">
+        <h2>Building List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Building ID</th>
+                <th>Building Name</th>
+                <th>Address</th>
+
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="building : ${buildings}">
+                <td th:text="${building.id}"><a href="/building/${building.id}">Building ID</a></td>
+                <td th:text="${building.buildingName}"><a href="/building/${building.buildingName}">Building</a></td>
+                <td th:text="${building.address}"><a th:href="/building/${building.address}"> Address</a> </td>
+                <td><a th:href="${ '/building/' + building.id}">View</a></td>
+                <td><a th:href="${'/building/edit/' + building.id}">Edit</a></td>
+                <td><a th:href="${'/building/delete/' + building.id}">Delete</a> </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
+

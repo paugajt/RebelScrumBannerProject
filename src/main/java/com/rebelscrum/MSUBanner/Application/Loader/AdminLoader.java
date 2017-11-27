@@ -25,7 +25,6 @@ public class AdminLoader implements ApplicationListener<ContextRefreshedEvent> {
         admin.setFirstName("Sang");
         admin.setLastName("Nguyen");
         admin.setEmail("snguye39@msudenver.edu");
-        admin.setAdminType("Administrator");
         admin.setDepartment("Computer Science");
         adminRepository.save(admin);
 

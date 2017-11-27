@@ -5,54 +5,39 @@ import javax.persistence.*;
 
 @Entity
 public class Admin extends User{
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String adminType;
     private String department;
     private String password;
 
 
     public String getFirstName() {
-        return firstName;
+        return super.getFirstName();
     }
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        super.setFirstName(firstName);
     }
 
     public String getLastName() {
-        return lastName;
+        return super.getLastName();
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        super.setLastName(lastName);
     }
 
     public String getEmail() {
-        return email;
+        return super.getEmail();
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String email) {super.setEmail(email);
     }
 
     public Integer getId(){
-        return id;
+        return super.getId();
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-
-    public String getAdminType() {
-        return adminType;
-    }
-    public void setAdminType(String adminType) {
-        this.adminType = adminType;
+    public void setUserType() {super.setUserType("Administrator");}
+    public String getUserType() {
+        return super.getUserType();
     }
 
 
@@ -63,6 +48,7 @@ public class Admin extends User{
     public void setDepartment(String department) {
         this.department = department;
     }
+
 
     public String getPassword() {
         return password;

@@ -1,19 +1,17 @@
 package com.rebelscrum.MSUBanner.Application.Entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
 public class Student extends User{
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
-    private String firstName;
-    private String lastName;
-    private String email;
     private String major;
     private Integer creditsEarned;
     private Integer creditLevel;
+    @OneToMany
+    @JoinColumn(name = "section_id")
+    private Set<Section> sections;
 
     public String getMajor() {
         return major;
@@ -40,36 +38,43 @@ public class Student extends User{
     }
 
     public String getFirstName() {
-        return firstName;
+        return super.getFirstName();
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        super.setFirstName(firstName);
     }
 
     public String getLastName() {
-        return lastName;
+        return super.getLastName();
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        super.setLastName(lastName);
     }
 
     public String getEmail() {
-        return email;
+        return super.getEmail();
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        super.setEmail(email);
     }
 
     public Integer getId(){
-        return id;
+        return super.getId();
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    //set usertype as student
+    public void setUserype() {super.setUserType("Student");}
+
+    public String getUserType(){
+        return super.getUserType();
     }
+
+    public Set<Section> getSections() {return sections;}
+
+    public void setSections(Set<Section> sections) {this.sections = sections;}
 
 
 }

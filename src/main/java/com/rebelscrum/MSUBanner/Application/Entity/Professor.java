@@ -1,38 +1,33 @@
 package com.rebelscrum.MSUBanner.Application.Entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
 public class Professor extends User{
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String userType;
-    private String currentCourses;
+    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
+    private Set<Section> sections;
     private String department;
     private String officeLocation;
 
 
-    public String getFirstName() {return firstName;}
-    public void setFirstName(String firstname) {this.firstName = firstname;}
 
-    public String getLastName() {return lastName;}
-    public void setLastName(String lastName) {this.lastName = lastName;}
+    public Set<Section> getSections() {return sections;}
 
-    public String getEmail() {return email;}
-    public void setEmail(String email) {this.email = email;}
+    public void setSections(Set<Section> sections) {this.sections = sections;}
 
-    public String getUserType() {return userType;}
-    public void setUserType(String userType) {this.userType = userType;}
+    public String getFirstName() {return super.getFirstName();}
+    public void setFirstName(String firstName) {super.setFirstName(firstName);}
 
-    public String getCurrentCourses() { return currentCourses; }
-    public void setCurrentCourses(String currentCourses) {
-        this.currentCourses = currentCourses;
-    }
+    public String getLastName() {return super.getLastName();}
+    public void setLastName(String lastName) {super.setLastName(lastName);}
+
+    public String getEmail() {return super.getEmail();}
+    public void setEmail(String email) {super.setEmail(email);}
+
+    public void setUserType() {super.setUserType("Professor");}
+    public String getUserType() {return super.getUserType();}
 
     public String getDepartment() {
         return department;
@@ -48,8 +43,7 @@ public class Professor extends User{
         this.officeLocation = officeLocation;
     }
 
-    public Integer getId() {return id;}
-    public void setId(Integer id) {this.id = id;}
+    public Integer getId() {return super.getId();}
 
 
 }
