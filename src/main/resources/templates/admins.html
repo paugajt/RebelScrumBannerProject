@@ -28,7 +28,6 @@
             </tr>
             <tr th:each="admin : ${admins}">
                 <td th:text="${admin.id}"><a href="/admin/${admin.id}">Id</a></td>
-                <td th:text="${admin.adminType}"><a href="/admin/${admin.adminType}">Status</a> </td>
                 <td th:text="${admin.firstName}">First Name</td>
                 <td th:text="${admin.lastName}">Last Name</td>
                 <td th:text="${admin.email}">Email</td>
