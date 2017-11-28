@@ -65,7 +65,7 @@ public class Course {
     public void setId(Integer id) {
         this.id = id;
     }
-    
+
     /*
     public Building getBuilding() {return building;}
 
