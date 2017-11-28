@@ -15,7 +15,7 @@ public class Schedule {
     @JoinColumn(name = "building_id")
     private Building building;
     @OneToMany
-    public static Set<Course> courseList;
+    public static Set<Section> sectionList;
     private String days;
 
     final String MW = "mw";
@@ -42,7 +42,7 @@ public class Schedule {
     /*
     public void addCourse(Course course){
         if (conflicts(course) == false){
-            this.courseList.add(course);
+            this.sectionList.add(course);
         }
         else{
             //Error occurred, couldn't be added to schedule due to conflicts.
