@@ -12,7 +12,6 @@ public class Course {
     @Column(name = "course_id", nullable = false)
     private Integer id;
     
-    // The annotation goes here not on the getter setter
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private Set<Section> sections;
 

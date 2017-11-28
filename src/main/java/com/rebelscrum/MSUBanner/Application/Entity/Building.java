@@ -13,7 +13,6 @@ public class Building {
     private String address;
     @OneToMany(mappedBy = "building")
     private Set<Room> roomList;
-    //private Set<String> departmentList;
 
     public  void setId(Integer id) {this.id = id;}
     public Integer getId() {return id;}
@@ -24,19 +23,12 @@ public class Building {
     public  void setAddress(String address) {this.address = address;}
     public String getAddress() {return address;}
 
-    /*
     public void addRoom(Room room){
         this.roomList.add(room);
     }
-    public ArrayList<Room> getRoomList(){
+    public Set<Room> getRoomList(){
         return roomList;
     }
 
-    public void addDepartment(String department){
-        this.departmentList.add(department);
-    }
-    public ArrayList<String> getDepartmentList() {
-        return departmentList;
-    }
-    */
+
 }
