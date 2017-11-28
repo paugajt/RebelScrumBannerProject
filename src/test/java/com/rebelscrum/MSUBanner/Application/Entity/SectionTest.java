@@ -35,9 +35,6 @@ public class SectionTest {
         test.setLearningObjectives("Student will be able to apply software engineering principles in an agile team" +
                 " environment");
         test.setSemester("Fall");
-        test.setDays("MW");
-        test.setTimeStart(1200);
-        test.setTimeEnd(1350);
         tester.setCourse (test);
         assertNotNull("The Course doesn't exist",tester.getCourse());
     }
@@ -55,9 +52,6 @@ public class SectionTest {
         test.setLearningObjectives("Student will be able to apply software engineering principles in an agile team" +
                 " environment");
         test.setSemester("Fall");
-        test.setDays("MW");
-        test.setTimeStart(1200);
-        test.setTimeEnd(1350);
         tester.setCourse(test);
         assertNotNull("The Course doesn't exist",tester.getCourse());
     }

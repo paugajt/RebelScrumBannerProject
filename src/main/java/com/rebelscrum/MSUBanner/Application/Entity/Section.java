@@ -23,6 +23,11 @@ public class Section {
     @JoinColumn(name = "student_id")
     private Set<Student> student;
 
+    private String days;
+    private int timeStart;
+    private int timeEnd;
+    private Room room;
+
     public String getDays() {
         return days;
     }
@@ -47,12 +52,8 @@ public class Section {
         this.timeEnd = timeEnd;
     }
 
-    public Building getBuilding() {
-        return building;
-    }
-
-    public void setBuilding(Building building) {
-        this.building = building;
+    public String getBuilding() {
+        return room.getBuilding() ;
     }
 
     public Room getRoom() {
@@ -63,13 +64,6 @@ public class Section {
         this.room = room;
     }
 
-    private String days;
-    private int timeStart;
-    private int timeEnd;
-    private Building building;
-    private Room room;
-
-    //Getters and setters
     public Integer getId() {return id;}
 
     public void setId(Integer id) {this.id = id;}

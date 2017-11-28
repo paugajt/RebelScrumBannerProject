@@ -12,12 +12,12 @@ public class ConflictChecks {
         boolean checkDays = true;
         boolean checkTimes = true;
         for (int i = 0; i < Schedule.courseList.size(); i++){
-            if (courseToAdd.getDays() != Schedule.courseList.get(i).getDays()){
+            if (courseToAdd.getDays() != Schedule.courseList[i].getDays()){
                 checkDays = false;
             }
 
-            if (!(courseToAdd.getTimeStart() > Schedule.courseList.get(i).getTimeStart()) &&
-                    !(courseToAdd.getTimeEnd() < Schedule.courseList.get(i).getTimeEnd())){
+            if (!(courseToAdd.getTimeStart() > Schedule.courseList[i].getTimeStart()) &&
+                    !(courseToAdd.getTimeEnd() < Schedule.courseList[i].getTimeEnd())){
                 checkTimes = false;
             }
 
