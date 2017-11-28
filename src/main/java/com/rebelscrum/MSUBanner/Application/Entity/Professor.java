@@ -13,21 +13,44 @@ public class Professor extends User{
 
 
 
-    public Set<Section> getSections() {return sections;}
+    public Set<Section> getSections() {
+        return sections;
+    }
 
-    public void setSections(Set<Section> sections) {this.sections = sections;}
+    public void setSections(Set<Section> sections) {
+        this.sections = sections;
+    }
 
-    public String getFirstName() {return super.getFirstName();}
-    public void setFirstName(String firstName) {super.setFirstName(firstName);}
+    public String getFirstName() {
+        return super.getFirstName();
+    }
+    public void setFirstName(String firstName) {
+        super.setFirstName(firstName);
+    }
 
-    public String getLastName() {return super.getLastName();}
-    public void setLastName(String lastName) {super.setLastName(lastName);}
+    public String getLastName() {
+        return super.getLastName();
+    }
 
-    public String getEmail() {return super.getEmail();}
-    public void setEmail(String email) {super.setEmail(email);}
+    public void setLastName(String lastName) {
+        super.setLastName(lastName);
+    }
 
-    public void setUserType() {super.setUserType("Professor");}
-    public String getUserType() {return super.getUserType();}
+    public String getEmail() {
+        return super.getEmail();
+    }
+
+    public void setEmail(String email) {
+        super.setEmail(email);
+    }
+
+    public void setUserType() {
+        super.setUserType("Professor");
+    }
+
+    public String getUserType() {
+        return super.getUserType();
+    }
 
     public String getDepartment() {
         return department;
@@ -43,7 +66,9 @@ public class Professor extends User{
         this.officeLocation = officeLocation;
     }
 
-    public Integer getId() {return super.getId();}
+    public Integer getId() {
+        return super.getId();
+    }
 
 
 }

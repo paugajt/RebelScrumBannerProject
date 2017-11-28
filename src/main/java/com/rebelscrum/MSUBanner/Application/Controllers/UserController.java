@@ -52,20 +52,16 @@ public class UserController {
     }
 
 
-
   @RequestMapping(value = "user", method = RequestMethod.POST)
     public String saveUser(User user){
         userService.saveUser(user);
         return "redirect:/user/" + user.getId();
     }
 
-
     @RequestMapping("user/delete/{id}")
     public String delete(@PathVariable Integer id){
         userService.deleteUser(id);
         return "redirect:/users";
     }
-
-
 
 }
