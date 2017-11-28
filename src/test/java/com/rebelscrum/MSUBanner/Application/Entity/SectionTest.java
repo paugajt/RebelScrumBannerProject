@@ -5,12 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class SectionTest {
-<<<<<<< HEAD
-    Course testCourse = new Course();
-    Professor testProf = new Professor();
-=======
-    /*
->>>>>>> d781e0ff976abeaa175fee16e9224fbb422f04c5
+
     @Test
     public void getId() throws Exception {
         Section tester = new Section ();
@@ -43,8 +38,6 @@ public class SectionTest {
         test.setDays("MW");
         test.setTimeStart(1200);
         test.setTimeEnd(1350);
-        test.setBuilding(null);
-        test.setRoom(null);
         tester.setCourse (test);
         assertNotNull("The Course doesn't exist",tester.getCourse());
     }
@@ -65,8 +58,6 @@ public class SectionTest {
         test.setDays("MW");
         test.setTimeStart(1200);
         test.setTimeEnd(1350);
-        test.setBuilding(null);
-        test.setRoom(null);
         tester.setCourse(test);
         assertNotNull("The Course doesn't exist",tester.getCourse());
     }
@@ -98,5 +89,5 @@ public class SectionTest {
         tester.setProfessor(test);
         assertNotNull("The Professor doesn't exist",tester.getProfessor());
     }
-*/
+
 }

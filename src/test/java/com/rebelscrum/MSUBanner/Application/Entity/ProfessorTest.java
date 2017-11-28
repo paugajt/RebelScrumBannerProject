@@ -5,11 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ProfessorTest {
-<<<<<<< HEAD
-//  Course testCourse = new Course();
-=======
-    /*
->>>>>>> d781e0ff976abeaa175fee16e9224fbb422f04c5
+
     @Test
     public void getFirstName() throws Exception {
         Professor tester = new Professor ();
@@ -121,5 +117,4 @@ public class ProfessorTest {
         tester.setId(123);
         assertNotNull("The ID doesn't exist",tester.getId());
     }
-*/
 }
