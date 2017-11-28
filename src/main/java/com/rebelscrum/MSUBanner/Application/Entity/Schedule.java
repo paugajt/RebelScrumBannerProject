@@ -15,7 +15,7 @@ public class Schedule {
     @JoinColumn(name = "building_id")
     private Building building;
     @OneToMany
-    private Set<Course> courseList;
+    public static Set<Course> courseList;
     private String days;
 
     final String MW = "mw";
