@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Rebel Scrum</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/header.css" th:href="@{/css/header.css}" />
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h2>Enrollment Details</h2>
+    <div>
+        <form class="form-horizontal" th:object="${enrollment}" th:action="@{/enrollment}" method="post">
+            <input type="hidden" th:field="*{id}"/>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-lavel">Course:</label>
+                <div class="col-sm-10">
+                    <select name="courses" th:field="*{course}">
+                        <option value=""
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
