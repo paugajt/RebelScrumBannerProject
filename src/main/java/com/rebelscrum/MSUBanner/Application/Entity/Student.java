@@ -12,6 +12,11 @@ public class Student extends User{
     @OneToMany
     @JoinColumn(name = "section_id")
     private Set<Section> sections;
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    private Set<Enrollment> enrollments;
+
+    public void setEnrollments(Set<Enrollment> enrollments) {this.enrollments = enrollments;}
+    public Set<Enrollment> getEnrollments() {return this.enrollments;}
 
     public String getMajor() {
         return major;

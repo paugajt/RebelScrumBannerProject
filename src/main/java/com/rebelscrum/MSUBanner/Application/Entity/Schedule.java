@@ -15,7 +15,7 @@ public class Schedule {
     @JoinColumn(name = "building_id")
     private Building building;
     @OneToMany
-    private Set<Course> courseList;
+    public static Set<Section> sectionList;
     private String days;
 
     final String MW = "mw";
@@ -39,43 +39,10 @@ public class Schedule {
     public String getTR() {return TR; }
 
     public int getTime() {return time; }
-    /*
-    public void addCourse(Course course){
-        if (conflicts(course) == false){
-            this.courseList.add(course);
-        }
-        else{
-            //Error occurred, couldn't be added to schedule due to conflicts.
-            //Need to put an alert in the HTML
 
-        }
-    }
+    public Set<Section> getSectionList() {return this.sectionList;}
 
-    public ArrayList<Course> getCourseList(){
-        return courseList;
-    }
+    public void setSectionList(Set sectionLIst) {this.sectionList = sectionList;}
 
-    //Checks time and day conflicts for course to be added against courses already in course list
-    public boolean conflicts(Course courseToAdd){
-        boolean checkDays = true;
-        boolean checkTimes = true;
-        for (int i = 0; i < courseList.size(); i++){
-            if (courseToAdd.getDays() != courseList.get(i).getDays()){
-                checkDays = false;
-            }
-
-            if (!(courseToAdd.getTimeStart() > courseList.get(i).getTimeStart()) &&
-		!(courseToAdd.getTimeEnd() < courseList.get(i).getTimeEnd())){
-                checkTimes = false;
-            }
-
-            if (checkDays && checkTimes){
-                return true;
-            }
-
-        }
-        return false;
-    }
-    */
-
+    //add a Section to the schedule
  }

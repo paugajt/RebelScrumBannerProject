@@ -23,7 +23,55 @@ public class Section {
     @JoinColumn(name = "student_id")
     private Set<Student> student;
 
-    //Getters and setters
+    private String days;
+    private int timeStart;
+    private int timeEnd;
+    @OneToOne
+    @JoinColumn(name = "room_id")
+    private Room room;
+    @OneToMany(mappedBy = "section", cascade = CascadeType.ALL)
+    private Set<Enrollment> enrollments;
+
+
+    public void setEnrollments(Set<Enrollment> enrollments) {this.enrollments = enrollments;}
+    public Set<Enrollment> getEnrollments() {return this.enrollments;}
+
+    public String getDays() {
+        return days;
+    }
+
+    public void setDays(String days) {
+        this.days = days;
+    }
+
+    public int getTimeStart() {
+        return timeStart;
+    }
+
+    public void setTimeStart(int timeStart) {
+        this.timeStart = timeStart;
+    }
+
+    public int getTimeEnd() {
+        return timeEnd;
+    }
+
+    public void setTimeEnd(int timeEnd) {
+        this.timeEnd = timeEnd;
+    }
+
+    public String getBuilding() {
+        return room.getBuilding() ;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
     public Integer getId() {return id;}
 
     public void setId(Integer id) {this.id = id;}
