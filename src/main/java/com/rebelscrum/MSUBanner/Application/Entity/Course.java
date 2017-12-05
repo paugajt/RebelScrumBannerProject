@@ -5,11 +5,17 @@ import javax.persistence.*;
 import java.util.Set;
 import java.util.ArrayList;
 
+/**
+ * course class with fields to implement into database
+ */
 @Entity
 public class Course {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "course_id", nullable = false)
+    /**
+     * all fields and parameters for courses
+     */
     private Integer id;
     
     // The annotation goes here not on the getter setter
@@ -28,59 +34,157 @@ public class Course {
     private int timeEnd;
     //private Building building;
     //private Room room;
+    /**
+     * Array list to have all the courses
+     */
     private ArrayList<Course> allCourses = new ArrayList<>();
 
-
+    /**
+     * Set of sections in the database
+     * @return
+     */
     public Set<Section> getSections() {return sections;}
 
+    /**
+     * setter for section
+     * @param sections
+     */
     public void setSections(Set<Section> sections) {this.sections = sections;}
 
+    /**
+     * setter for course name
+     * @param courseName
+     */
     public  void setCourseName(String courseName) {this.courseName = courseName;}
 
+    /**
+     * getter for course name
+     * @return
+     */
     public String getCourseName() {return courseName;}
 
+    /**
+     * setter for department
+     * @param department
+     */
     public void setDepartment(String department) {this.department = department;}
 
+    /**
+     * getter for department
+     * @return
+     */
     public String getDepartment() {return department;}
 
+    /**
+     * setter for creditlevel
+     * @param creditLevel
+     */
     public void setCreditLevel(String creditLevel) {this.creditLevel = creditLevel;}
 
+    /**
+     * getter for credit level
+     * @return
+     */
     public String getCreditLevel() {return creditLevel;}
 
+    /**
+     * setter for description
+     * @param description
+     */
     public void setDescription(String description) {this.description = description;}
 
+    /**
+     * getter for description
+     * @return
+     */
     public String getDescription() {return description;}
 
+    /**
+     * setter for learning
+     * @param learningObjectives
+     */
     public void setLearningObjectives(String learningObjectives) {this.learningObjectives = learningObjectives;}
 
+    /**
+     * getter for learning
+     * @return
+     */
     public String getLearningObjectives() {return learningObjectives;}
 
+    /**
+     * setter for coreqs
+     * @param coReqs
+     */
     public void setCoReqs(String coReqs) { this.coReqs = coReqs;}
 
+    /**
+     * getter for coreqs
+     * @return
+     */
     public String getCoReqs() {return coReqs;}
 
+    /**
+     * setter for semester
+     * @param semester
+     */
     public void setSemester(String semester) { this.semester = semester;}
 
+    /**
+     * getter for semester
+     * @return
+     */
     public String getSemester() {return semester;}
 
+    /**
+     * getter for id
+     * @return
+     */
     public Integer getId(){
         return id;
     }
 
+    /**
+     * setter for id
+     * @param id
+     */
     public void setId(Integer id) {
         this.id = id;
     }
 
+    /**
+     * setter for days
+     * @param days
+     */
     public void setDays(String days) {this.days = days;}
 
+    /**
+     * getter for days
+     * @return
+     */
     public String getDays() {return days;}
 
+    /**
+     *setter for timestart
+     * @param timeStart
+     */
     public void setTimeStart(int timeStart){this.timeStart = timeStart;}
 
+    /**
+     * getter for timestart
+     * @return
+     */
     public int getTimeStart() {return timeStart;}
 
+    /**
+     * setter for time end
+     * @param timeEnd
+     */
     public void setTimeEnd(int timeEnd){this.timeEnd = timeEnd;}
 
+    /**
+     * getter for time end
+     * @return
+     */
     public int getTimeEnd() {return timeEnd;}
     /*
     public Building getBuilding() {return building;}

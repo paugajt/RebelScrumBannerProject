@@ -8,16 +8,31 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+/**
+ * Loads the database with the information below
+ */
 @Component
 public class AdminLoader implements ApplicationListener<ContextRefreshedEvent> {
+    /**
+     * repository to communicate with database
+     */
     private AdminRepository adminRepository;
 
     private Logger log = Logger.getLogger(AdminLoader.class);
 
+    /**
+     * for testing
+     * @param adminRepository
+     */
     @Autowired
     public void setAdminRepository(AdminRepository adminRepository) {
         this.adminRepository = adminRepository;
     }
+
+    /**
+     * load the fields with this information
+     * @param event
+     */
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 

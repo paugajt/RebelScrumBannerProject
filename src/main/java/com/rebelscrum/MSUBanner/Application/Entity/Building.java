@@ -4,25 +4,49 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Set;
 
+/**
+ * Building class that has the name of the building and build id.
+ */
 @Entity
 public class Building {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    /**
+     * Objects for building class
+     */
     private Integer id;
     private String buildingName;
-    private String address;
     @OneToMany(mappedBy = "building")
+    /**
+     * Database relationship.
+     */
     private Set<Room> roomList;
     //private Set<String> departmentList;
 
+    /**
+     *setter for building id
+     * @param id of building
+     */
     public  void setId(Integer id) {this.id = id;}
+
+    /**
+     *getter for building id
+     * @return building
+     */
     public Integer getId() {return id;}
 
-    public  void setBuildingName(String buildingName) {this.buildingName = buildingName;}
-    public String getBuildingName() {return buildingName;}
+    /**
+     * setter for building name
+     * @param buildingName
+     */
 
-    public  void setAddress(String address) {this.address = address;}
-    public String getAddress() {return address;}
+    public  void setBuildingName(String buildingName) {this.buildingName = buildingName;}
+
+    /**
+     *getter for building name
+     * @return
+     */
+    public String getBuildingName() {return buildingName;}
 
     /*
     public void addRoom(Room room){
