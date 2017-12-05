@@ -11,13 +11,15 @@ public class ConflictChecks {
     public boolean conflicts(Section courseToAdd){
         boolean checkDays = true;
         boolean checkTimes = true;
-        for (int i = 0; i < Schedule.courseList.size(); i++){
-            if (courseToAdd.getDays() != Schedule.courseList[i].getDays()){
+        Section[] sectionList = new Section[Schedule.sectionList.size()];
+        Schedule.sectionList.toArray(sectionList);
+        for (int i = 0; i < Schedule.sectionList.size(); i++){
+            if (courseToAdd.getDays() != sectionList[i].getDays()){
                 checkDays = false;
             }
 
-            if (!(courseToAdd.getTimeStart() > Schedule.courseList[i].getTimeStart()) &&
-                    !(courseToAdd.getTimeEnd() < Schedule.courseList[i].getTimeEnd())){
+            if (!(courseToAdd.getTimeStart() > sectionList[i].getTimeStart()) &&
+                    !(courseToAdd.getTimeEnd() < sectionList[i].getTimeEnd())){
                 checkTimes = false;
             }
 

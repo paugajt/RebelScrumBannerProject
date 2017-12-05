@@ -11,6 +11,11 @@ public class Semester {
     @OneToMany
     @JoinColumn(name = "schedule_id")
     private Set<Schedule> schedules;
+    @OneToMany(mappedBy = "semester", cascade = CascadeType.ALL)
+    private Set<Enrollment> enrollments;
+
+    public void setEnrollments(Set<Enrollment> enrollments) {this.enrollments = enrollments;}
+    public Set<Enrollment> getEnrollments() {return this.enrollments;}
 
     public void setTerm(String term) {
         this.Term = term;

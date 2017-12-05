@@ -26,7 +26,15 @@ public class Section {
     private String days;
     private int timeStart;
     private int timeEnd;
+    @OneToOne
+    @JoinColumn(name = "room_id")
     private Room room;
+    @OneToMany(mappedBy = "section", cascade = CascadeType.ALL)
+    private Set<Enrollment> enrollments;
+
+
+    public void setEnrollments(Set<Enrollment> enrollments) {this.enrollments = enrollments;}
+    public Set<Enrollment> getEnrollments() {return this.enrollments;}
 
     public String getDays() {
         return days;
