@@ -2,12 +2,14 @@ package com.rebelscrum.MSUBanner.Application.Entity;
 
 import javax.persistence.*;
 
-
+/**
+ * Administration entity to define what an admin
+ * user has
+ */
 @Entity
 public class Admin extends User{
     private String department;
     private String password;
-
 
     public String getFirstName() {
         return super.getFirstName();
