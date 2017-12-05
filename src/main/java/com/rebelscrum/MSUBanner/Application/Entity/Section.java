@@ -29,12 +29,6 @@ public class Section {
     @JoinColumn(name = "student_id")
     private Set<Student> student;
 
-    //Getters and setters
-
-    /**
-     * getter for id
-     * @return
-     */
     public Integer getId() {return id;}
 
     /**

@@ -21,7 +21,6 @@ public class Building {
      * Database relationship.
      */
     private Set<Room> roomList;
-    //private Set<String> departmentList;
 
     /**
      *setter for building id
@@ -48,19 +47,12 @@ public class Building {
      */
     public String getBuildingName() {return buildingName;}
 
-    /*
     public void addRoom(Room room){
         this.roomList.add(room);
     }
-    public ArrayList<Room> getRoomList(){
+    public Set<Room> getRoomList(){
         return roomList;
     }
 
-    public void addDepartment(String department){
-        this.departmentList.add(department);
-    }
-    public ArrayList<String> getDepartmentList() {
-        return departmentList;
-    }
-    */
+
 }
