@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- *
+ * Professor controller to pass info between database
+ * and html pages
  */
-
 @Controller
 public class ProfessorController {
     /**
-     *
+     * Services to be used by the hibernate to correctly add
+     * information to the database
      */
 
     private ProfessorService professorService;
