@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Rebel Scrum</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/header.css" th:href="@{/css/header.css}" />
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <div th:if="${not #lists.isEmpty(semesters)}">
+        <h2>User List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Term</th>
+
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="semester : ${semesters}">
+                <td th:text="${semester.id}"><a href="/semester/${semester.id}">Id</a></td>
+                <td th:text="${semester.semesterTerm}">Year:</td>
+
+                <td><a th:href="${ '/semester/' + semester.id}">View</a></td>
+                <td><a th:href="${'/semester/edit/' + semester.id}">Edit</a></td>
+                <td><a th:href="${'/semester/delete/' + semester.id}">Delete</a> </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ProfessorController {
     /**
-     *
+     *implementation used to communicate with the database
      */
 
     private ProfessorService professorService;
@@ -43,8 +43,7 @@ public class ProfessorController {
     }
 
     /**
-     * * Will pull information from the webpages to create a
-     * new class to be store into the database.
+     * Mapping to the id of the professor
      * @param id
      * @param model
      * @return

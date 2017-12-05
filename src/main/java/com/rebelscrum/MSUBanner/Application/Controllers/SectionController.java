@@ -10,9 +10,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * Controls the section class
+ */
 @Controller
 public class SectionController {
 
+    /**
+     *Services to be used by hibernate to correctly add
+     * information to the database.
+     */
     private SectionService sectionService;
 
     @Autowired

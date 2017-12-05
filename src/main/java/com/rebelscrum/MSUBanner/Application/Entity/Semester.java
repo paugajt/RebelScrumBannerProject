@@ -2,12 +2,17 @@ package com.rebelscrum.MSUBanner.Application.Entity;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * impelement to find semester in database
+ */
 @Entity
 public class Semester {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String Term;
-    private Integer year;
+    /**
+     * fields for database table
+     */
+    private String semesterYear;
     @OneToMany
     @JoinColumn(name = "schedule_id")
     private Set<Schedule> schedules;
@@ -17,20 +22,20 @@ public class Semester {
     public void setEnrollments(Set<Enrollment> enrollments) {this.enrollments = enrollments;}
     public Set<Enrollment> getEnrollments() {return this.enrollments;}
 
-    public void setTerm(String term) {
-        this.Term = term;
+
+    /**
+     * getter for semester
+     * @return
+     */
+    public String getSemesterYear() {
+        return semesterYear;
     }
 
-    public String getTerm() {
-        return Term;
-    }
-
-
-    public void setYear(Integer year) {
-        this.year = year;
-    }
-
-    public Integer getYear() {
-        return year;
+    /**
+     * setter for semester
+     * @param semesterYear
+     */
+    public void setSemesterYear(String semesterYear) {
+        this.semesterYear = semesterYear;
     }
 }
