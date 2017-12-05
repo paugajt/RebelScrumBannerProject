@@ -19,10 +19,10 @@ public class EnrollmentController {
 
     /**
      * Setter for enrollmentService for mapping
-     * @param enorllmentService
+     * @param enrollmentService
      */
     @Autowired
-    public void setEnrollmentService(EnrollmentService enorllmentService) {this.enrollmentService = enorllmentService;}
+    public void setEnrollmentService(EnrollmentService enrollmentService) {this.enrollmentService = enrollmentService;}
 
     /**
      * Lists all of the enrollments in the database
