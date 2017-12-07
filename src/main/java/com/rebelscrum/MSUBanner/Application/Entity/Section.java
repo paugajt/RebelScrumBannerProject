@@ -29,7 +29,6 @@ public class Section {
     @JoinColumn(name = "student_id")
     private Set<Student> student;
 
-
     private String days;
     private int timeStart;
     private int timeEnd;
@@ -84,6 +83,7 @@ public class Section {
      * getter for id
      * @return
      */
+
     public Integer getId() {return id;}
 
     /**

@@ -46,10 +46,10 @@ public class UserController {
         return "userform";
     }
 
-    @RequestMapping("user/login")
-    public String loginUser(){
-        return "login";
-    }
+  //  @RequestMapping("user/login")
+    //public String loginUser(){
+ //       return "login";
+   // }
 
 
   @RequestMapping(value = "user", method = RequestMethod.POST)

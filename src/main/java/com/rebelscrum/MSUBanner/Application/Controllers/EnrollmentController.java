@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import sun.misc.Request;
 
 @Controller
 public class EnrollmentController {
@@ -31,7 +30,8 @@ public class EnrollmentController {
      */
     @RequestMapping(value = "/enrollments", method = RequestMethod.GET)
     public String list(Model model) {
-        model.addAttribute("enrollments", enrollmentService.listAllEnrollments());
+        Iterable<Enrollment> enrollments = enrollmentService.listAllEnrollments();
+        model.addAttribute("enrollments", enrollments);
         return "enrollments";
     }
 
