@@ -12,6 +12,10 @@ public class Semester {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    public void setSemesterId(Integer id) {this.id = id;}
+    public Integer getSemesterId() {return this.id;}
     /**
      * fields for database table.
      */

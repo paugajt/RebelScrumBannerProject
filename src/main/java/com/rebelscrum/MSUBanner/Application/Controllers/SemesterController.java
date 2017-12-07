@@ -94,7 +94,7 @@ public class SemesterController {
     @RequestMapping(value = "semester", method = RequestMethod.POST)
     public String saveSemester(Semester Semester) {
         semesterService.saveSemester(Semester);
-        return "redirect:/semester/" + Semester.getSemesterYear();
+        return "redirect:/semester/" + Semester.getSemesterId();
     }
 
     /**
