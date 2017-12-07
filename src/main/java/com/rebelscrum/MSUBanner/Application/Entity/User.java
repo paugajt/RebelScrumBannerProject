@@ -13,7 +13,9 @@ public class User {
     private String lastName;
     private String email;
     private String userType;
+    private String username;
     private String password;
+    private String passwordConfirm;
 
    public String getFirstName() {
        return firstName;
@@ -44,6 +46,12 @@ public class User {
 
    }
 
+   public void setUsername(String username){ this.username = username;}
+
+   public String getUsername() {return username;}
+
+
+
    public Integer getId(){
        return id;
    }
@@ -60,8 +68,18 @@ public class User {
        return userType;
    }
 
+   public String getPassword() {return password;}
+
 
    public void setPassword(String password) {this.password = password;}
 
+    public String getPasswordConfirm() {
+        return passwordConfirm;
     }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
+    }
+    }
+
 
