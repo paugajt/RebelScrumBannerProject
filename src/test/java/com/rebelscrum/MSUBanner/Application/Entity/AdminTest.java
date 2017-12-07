@@ -5,7 +5,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class AdminTest {;
-/*
+
 
     @Test
     public void getFirstName() throws Exception {
@@ -71,22 +71,6 @@ public class AdminTest {;
     }
 
     @Test
-    public void getAdminType() throws Exception {
-        Admin tester = new Admin ();
-        assertNull("This test should pass when there is no Admin-Type", tester.getAdminType());
-        tester.setAdminType("The Boss");
-        assertNotNull("The ID doesn't exist",tester.getAdminType());
-    }
-
-    @Test
-    public void setAdminType() throws Exception {
-        Admin tester = new Admin ();
-        assertNull("This test should pass when there is no Admin-Type", tester.getAdminType());
-        tester.setAdminType("The Boss");
-        assertNotNull("The ID doesn't exist",tester.getAdminType());
-    }
-
-    @Test
     public void getDepartment() throws Exception {
         Admin tester = new Admin ();
         assertNull("This test should pass when there is no Department", tester.getDepartment());
@@ -117,5 +101,5 @@ public class AdminTest {;
         tester.setPassword("Abc123");
         assertNotNull("The password doesn't exist",tester.getPassword());
     }
-*/
+
 }

@@ -1,81 +1,124 @@
 package com.rebelscrum.MSUBanner.Application.Entity;
 import javax.persistence.*;
-import java.security.PrivateKey;
-import java.util.ArrayList;
 import java.util.Set;
 
+/**
+ * implementation to create database table.
+ */
 @Entity
 public class Schedule {
+    /**
+     * fields to create the database table.
+     */
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    /**
+     * fields to create the database table.
+     */
     @ManyToOne
     private Semester semester;
+    /**
+     * fields to create the database table.
+     */
     @OneToOne
     @JoinColumn(name = "building_id")
     private Building building;
+    /**
+     * fields to create the database table.
+     */
     @OneToMany
-    private Set<Course> courseList;
+    public static Set<Section> sectionList;
+    /**
+     * fields to create the database table.
+     */
     private String days;
-
+    /**
+     * fields to create the database table.
+     */
     final String MW = "mw";
+    /**
+     * fields to create the database table.
+     */
     final String TR = "tr";
+    /**
+     * fields to create the database table.
+     */
     final int time = 2;
 
-    public Semester getSemester() {return semester;}
+    /**
+     * getter for semester.
+     * @return semester
+     */
+    public Semester getSemester() {
+        return semester; }
 
-    public void setSemester(Semester semester) {this.semester = semester;}
+    /**
+     * setter for semester.
+     * @param semester
+     */
+    public void setSemester(Semester semester) {
+        this.semester = semester; }
 
-    public Building getBuilding() {return building;}
+    /**
+     * getter for building.
+     * @return building
+     */
+    public Building getBuilding() {
+        return building; }
 
-    public void setBuilding(Building building) {this.building = building;}
+    /**
+     * setter for semester.
+     * @param building
+     */
+    public void setBuilding(Building building) {
+        this.building = building; }
 
-    public String getDays() {return days;}
+    /**
+     * getter for days.
+     * @return days
+     */
+    public String getDays() {
+        return days; }
 
-    public void setDays(String days) {this.days = days;}
+    /**
+     * setter for semester.
+     * @param days
+     */
+    public void setDays(String days) {
+        this.days = days; }
 
-    public String getMW() {return MW;}
+    /**
+     * getter for MW.
+     * @return mw
+     */
+    public String getMW() {
+        return MW; }
 
-    public String getTR() {return TR; }
+    /**
+     * getter for TR.
+     * @return tr
+     */
+    public String getTR() {
+        return TR; }
 
-    public int getTime() {return time; }
-    /*
-    public void addCourse(Course course){
-        if (conflicts(course) == false){
-            this.courseList.add(course);
-        }
-        else{
-            //Error occurred, couldn't be added to schedule due to conflicts.
-            //Need to put an alert in the HTML
+    /**
+     * getter for Time.
+     * @return time
+     */
+    public int getTime() {
+        return time; }
 
-        }
-    }
+    /**
+     * @return section list.
+     */
+    public Set<Section> getSectionList() {
+        return this.sectionList; }
+    /**
+     *
+     */
+    public void setSectionList(Set sectionLIst) {
+        this.sectionList = sectionList; }
 
-    public ArrayList<Course> getCourseList(){
-        return courseList;
-    }
-
-    //Checks time and day conflicts for course to be added against courses already in course list
-    public boolean conflicts(Course courseToAdd){
-        boolean checkDays = true;
-        boolean checkTimes = true;
-        for (int i = 0; i < courseList.size(); i++){
-            if (courseToAdd.getDays() != courseList.get(i).getDays()){
-                checkDays = false;
-            }
-
-            if (!(courseToAdd.getTimeStart() > courseList.get(i).getTimeStart()) &&
-		!(courseToAdd.getTimeEnd() < courseList.get(i).getTimeEnd())){
-                checkTimes = false;
-            }
-
-            if (checkDays && checkTimes){
-                return true;
-            }
-
-        }
-        return false;
-    }
-    */
-
+    //add a Section to the schedule
  }

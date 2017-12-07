@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ProfessorController {
     /**
-     *
+     *implementation used to communicate with the database.
      */
 
     private ProfessorService professorService;
 
     /**
-     * Setter for mapping purposes
+     * Setter for mapping purposes.
      * @param professorService
      */
     @Autowired
-    public void setProfessorService(ProfessorService professorService){
+    public void setProfessorService(ProfessorService professorService) {
         this.professorService = professorService;
     }
 
@@ -34,25 +34,26 @@ public class ProfessorController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param model
-     * @return
+     * @return professors
      */
-    @RequestMapping(value ="/professors", method = RequestMethod.GET)
+    @RequestMapping(value = "/professors", method = RequestMethod.GET)
     public String list(Model model) {
-        model.addAttribute("professors", professorService.listAllProfessors());
+        model.addAttribute("professors",
+                professorService.listAllProfessors());
         return "professors";
     }
 
     /**
-     * * Will pull information from the webpages to create a
-     * new class to be store into the database.
+     * Mapping to the id of the professor.
      * @param id
      * @param model
-     * @return
+     * @return professorshow
      */
 
     @RequestMapping("professor/{id}")
-    public String showProfessor(@PathVariable Integer id, Model model){
-        model.addAttribute("professor", professorService.getProfessorById(id));
+    public String showProfessor(@PathVariable Integer id, Model model) {
+        model.addAttribute("professor",
+                professorService.getProfessorById(id));
         return "professorshow";
     }
 
@@ -61,11 +62,12 @@ public class ProfessorController {
      * new class to be store into the database.
      * @param id
      * @param model
-     * @return
+     * @return professor form
      */
     @RequestMapping("professor/edit/{id}")
-    public String edit(@PathVariable Integer id, Model model){
-        model.addAttribute("professor", professorService.getProfessorById(id));
+    public String edit(@PathVariable Integer id, Model model) {
+        model.addAttribute("professor",
+                professorService.getProfessorById(id));
         return "professorform";
     }
 
@@ -73,10 +75,10 @@ public class ProfessorController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param model
-     * @return
+     * @return professor form
      */
     @RequestMapping("professor/new")
-    public String newProfessor(Model model){
+    public String newProfessor(Model model) {
         model.addAttribute("professor", new Professor());
         return "professorform";
     }
@@ -85,10 +87,10 @@ public class ProfessorController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param professor
-     * @return
+     * @return redirect
      */
     @RequestMapping(value = "professor", method = RequestMethod.POST)
-    public String saveProfessor(Professor professor){
+    public String saveProfessor(Professor professor) {
         professorService.saveProfessor(professor);
         return "redirect:/professor/" + professor.getId();
     }
@@ -97,10 +99,10 @@ public class ProfessorController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param id
-     * @return
+     * @return redirect
      */
     @RequestMapping("professor/delete/{id}")
-    public String delete(@PathVariable Integer id){
+    public String delete(@PathVariable Integer id) {
         professorService.deleteProfessor(id);
         return "redirect:/professors";
     }

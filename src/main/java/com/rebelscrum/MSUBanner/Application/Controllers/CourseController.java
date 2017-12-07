@@ -22,11 +22,11 @@ public class CourseController {
     private CourseService courseService;
 
     /**
-     * Setter for courseService for mapping
+     * Setter for courseService for mapping.
      * @param courseService
      */
     @Autowired
-    public void setCourseService(CourseService courseService){
+    public void setCourseService(CourseService courseService) {
         this.courseService = courseService;
     }
 
@@ -34,9 +34,9 @@ public class CourseController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param model
-     * @return
+     * @return courses
      */
-    @RequestMapping(value ="/courses", method = RequestMethod.GET)
+    @RequestMapping(value = "/courses", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("courses", courseService.listAllCourses());
         return "courses";
@@ -47,11 +47,11 @@ public class CourseController {
      * new class to be store into the database.
      * @param id
      * @param model
-     * @return
+     * @return courseshow
      */
 
     @RequestMapping("course/{id}")
-    public String showCourse(@PathVariable Integer id, Model model){
+    public String showCourse(@PathVariable Integer id, Model model) {
         model.addAttribute("course", courseService.getCourseById(id));
         return "courseshow";
     }
@@ -61,11 +61,11 @@ public class CourseController {
      * new class to be store into the database.
      * @param id
      * @param model
-     * @return
+     * @return courseform
      */
 
     @RequestMapping("course/edit/{id}")
-    public String edit(@PathVariable Integer id, Model model){
+    public String edit(@PathVariable Integer id, Model model) {
         model.addAttribute("course", courseService.getCourseById(id));
         return "courseform";
     }
@@ -74,11 +74,11 @@ public class CourseController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param model
-     * @return
+     * @return courseform
      */
 
     @RequestMapping("course/new")
-    public String newCourse(Model model){
+    public String newCourse(Model model) {
         model.addAttribute("course", new Course());
         return "courseform";
     }
@@ -87,11 +87,11 @@ public class CourseController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param Course
-     * @return
+     * @return redirect
      */
 
     @RequestMapping(value = "course", method = RequestMethod.POST)
-    public String saveCourse(Course Course){
+    public String saveCourse(Course Course) {
         courseService.saveCourse(Course);
         return "redirect:/course/" + Course.getId();
     }
@@ -100,11 +100,11 @@ public class CourseController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param id
-     * @return
+     * @return redirect
      */
 
     @RequestMapping("course/delete/{id}")
-    public String delete(@PathVariable Integer id){
+    public String delete(@PathVariable Integer id) {
         courseService.deleteCourse(id);
         return "redirect:/courses";
     }

@@ -5,7 +5,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ProfessorTest {
-    /*
+
+
     @Test
     public void getFirstName() throws Exception {
         Professor tester = new Professor ();
@@ -54,35 +55,19 @@ public class ProfessorTest {
         assertNotNull("The Email doesn't exist",tester.getEmail());
     }
 
-    @Test
-    public void getUserType() throws Exception {
-        Professor tester = new Professor ();
-        assertNull("This test should pass when there is no User-Type", tester.getUserType());
-        tester.setUserType("The Boss");
-        assertNotNull("The ID doesn't exist",tester.getUserType());
-    }
-
-    @Test
-    public void setUserType() throws Exception {
-        Professor tester = new Professor ();
-        assertNull("This test should pass when there is no User-Type", tester.getUserType());
-        tester.setUserType("The Boss");
-        assertNotNull("The ID doesn't exist",tester.getUserType());
-    }
-
-    @Test
-    public void getCurrentCourses() throws Exception {
-        Professor tester = new Professor ();
-        tester.setCurrentCourses("Software Development Methods & Tools");
-        assertEquals("Software Development Methods & Tools","Software Development Methods & Tools");
-    }
-
-    @Test
-    public void setCurrentCourses() throws Exception {
-        Professor tester = new Professor ();
-        tester.setCurrentCourses("Software Development Methods & Tools");
-        assertEquals("Software Development Methods & Tools","Software Development Methods & Tools");
-    }
+//    @Test
+//    public void getCurrentCourses() throws Exception {
+//        Professor tester = new Professor ();
+//        tester.setCurrentCourses(testCourse);
+//        assertEquals("Software Development Methods & Tools","Software Development Methods & Tools");
+//    }
+//
+//    @Test
+//    public void setCurrentCourses() throws Exception {
+//        Professor tester = new Professor ();
+//        tester.setCurrentCourses("Software Development Methods & Tools");
+//        assertEquals("Software Development Methods & Tools","Software Development Methods & Tools");
+//    }
 
     @Test
     public void getDepartment() throws Exception {
@@ -127,5 +112,5 @@ public class ProfessorTest {
         tester.setId(123);
         assertNotNull("The ID doesn't exist",tester.getId());
     }
-*/
+
 }

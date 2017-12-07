@@ -8,16 +8,33 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+/**
+ * Loads the database with the information below.
+ */
 @Component
 public class UserLoader implements ApplicationListener<ContextRefreshedEvent> {
+    /**
+     * repository to communicate with database.
+     */
     private UserRepository userRepository;
-
+    /**
+     * logger.
+     */
     private Logger log = Logger.getLogger(UserLoader.class);
 
+    /**
+     * for testing.
+     * @param userRepository
+     */
     @Autowired
     public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+
+    /**
+     * load the fields with this information.
+     * @param event
+     */
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
