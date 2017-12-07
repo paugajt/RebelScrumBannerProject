@@ -3,7 +3,31 @@
 <head lang="en">
 </head>
 <body>
-
+<div class="image">
+    <div th:fragment="header">
+        <div th:fragment="header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <div class="row text-left">
+                            <img th:src="@{/images/MsuDenverLogo.jpg}" width="250"/>
+                        </div>
+                        <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                        <ul class="nav navbar-nav">
+                            <li><a href="../users.html" th:href="@{/users}">Users</a> </li>
+                            <li><a href="../userform.html" th:href="@{/user/new}">New User</a> </li>
+                            <li><a href="../studentform.html" th:href="@{/student/new}">New Student</a> </li>
+                            <li><a href="../studentshow.html" th:href="@{/students}">Student List</a> </li>
+                            <li><a href="../courses.html" th:href="@{/courses}">Courses</a> </li>
+                            <li><a href="../sections.html" th:href="@{/sections}">Sections</a> </li>
+                            <li><a href="../sectionform.html" th:href="@{/section/new}">New Section</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div th:fragment="header">
         <div th:fragment="header">
@@ -15,14 +39,14 @@
                     <div class="dropdown">
                         <button class="dropbtn">Student</button>
                         <div class="dropdown-content">
-                            <a href="../usershow.html" th:href="@{/students}">Students</a>
-                            <a href="../userform.html" th:href="@{/student/new}">New Student</a>
+                            <a href="../studentshow.html" th:href="@{/students}">Students</a>
+                            <a href="../studentform.html" th:href="@{/student/new}">New Student</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <button class="dropbtn">Professor</button>
                         <div class="dropdown-content">
-                            <a href="../professors.html" th:href="@{/professors}">Professors</a>
+                            <a href="../professorshow.html" th:href="@{/professors}">Professors</a>
                             <a href="../professorform.html" th:href="@{/professor/new}">New Professor</a>
                         </div>
                     </div>
@@ -31,6 +55,13 @@
                         <div class="dropdown-content">
                             <a href="../admins.html" th:href="@{/admins}">Administrators</a>
                             <a href="../adminform.html" th:href="@{/admin/new}">New Administrator</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Building</button>
+                        <div class="dropdown-content">
+                            <a href="../buildings.html" th:href="@{/buildings}">Buildings</a>
+                            <a href="../buildingform.html" th:href="@{/building/new}">New Building</a>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -43,20 +74,6 @@
                 </div>
 
             </nav>
-        </div>
-
-
-        <div class="jumbotron">
-            <div class="row text-center">
-                <div class="">
-                    <h2>Rebel Scrum</h2>
-                    <h3>MSU Denver Banner Project</h3>
-                </div>
-            </div>
-            <div class="row text-center">
-                <img src="../../static/images/msulogo.jpg" width="400"
-                     th:src="@{/images/Rebel Scrum Logo v3.jpg}"/>
-            </div>
         </div>
     </div>
 </div>

@@ -68,7 +68,7 @@ public class AdminController {
         return "redirect:/admins";
     }
 
-    @ModelAttribute("departmentList")
+    /*@ModelAttribute("departmentList")
     public Map <String, String> getDepartmentList()
     {
         Map<String, String> departmentList = new HashMap<String, String>();
@@ -78,5 +78,5 @@ public class AdminController {
         departmentList.put("Math", "Mathematics");
         return departmentList;
     }
-
+    */
 }
