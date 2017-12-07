@@ -4,41 +4,53 @@ import javax.persistence.*;
 import java.util.Set;
 
 /**
- * implementation to create database table
+ * implementation to create database table.
  */
 @Entity
-public class Professor extends User{
+public class Professor extends User {
     /**
-     * fields to create the database table
+     * fields to create the database table.
      */
     @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
+    /**
+     * fields to create the database table.
+     */
     private Set<Section> sections;
+    /**
+     * fields to create the database table.
+     */
     private String department;
+    /**
+     * fields to create the database table.
+     */
     private String officeLocation;
 
 
     /**
-     * getter for Set database sections
-     * @return
+     * getter for Set database sections.
+     * @return sections
      */
     public Set<Section> getSections() {
         return sections;
     }
 
+    /**
+     * fields to create the database table.
+     */
     public void setSections(Set<Section> sections) {
         this.sections = sections;
     }
 
     /**
-     * getter for first name
-     * @return
+     * getter for first name.
+     * @return First Name
      */
     public String getFirstName() {
         return super.getFirstName();
     }
 
     /**
-     * setter for first name
+     * setter for first name.
      * @param firstName
      */
     public void setFirstName(String firstName) {
@@ -46,15 +58,15 @@ public class Professor extends User{
     }
 
     /**
-     * getter for last name
-     * @return
+     * getter for last name.
+     * @return last name
      */
     public String getLastName() {
         return super.getLastName();
     }
 
     /**
-     * setter for last name
+     * setter for last name.
      * @param lastName
      */
     public void setLastName(String lastName) {
@@ -62,46 +74,39 @@ public class Professor extends User{
     }
 
     /**
-     * getter for email
-     * @return
+     * getter for email.
+     * @return email
      */
     public String getEmail() {
         return super.getEmail();
     }
 
     /**
-     * setter for email
+     * setter for email.
      * @param email
      */
     public void setEmail(String email) {
         super.setEmail(email);
     }
 
-    /**
-     * setter for user type
-     */
-    public void setUserType() {
-        super.setUserType("Professor");
-    }
-
-    /**
-     * getter for user type
-     * @return
+       /**
+     * getter for user type.
+     * @return user type
      */
     public String getUserType() {
         return super.getUserType();
     }
 
     /**
-     * getter for department
-     * @return
+     * getter for department.
+     * @return dept
      */
     public String getDepartment() {
         return department;
     }
 
     /**
-     * setter for department
+     * setter for department.
      * @param department
      */
     public void setDepartment(String department) {
@@ -109,15 +114,15 @@ public class Professor extends User{
     }
 
     /**
-     * getter for office location
-     * @return
+     * getter for office location.
+     * @return location
      */
     public String getOfficeLocation() {
         return officeLocation;
     }
 
     /**
-     * setter for office location
+     * setter for office location.
      * @param officeLocation
      */
     public void setOfficeLocation(String officeLocation) {
@@ -125,8 +130,8 @@ public class Professor extends User{
     }
 
     /**
-     * getter for id
-     * @return
+     * getter for id.
+     * @return id
      */
     public Integer getId() {
         return super.getId();

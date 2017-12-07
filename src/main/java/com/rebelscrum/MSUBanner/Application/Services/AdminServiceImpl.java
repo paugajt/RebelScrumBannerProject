@@ -7,27 +7,27 @@ import org.springframework.stereotype.Service;
 
 /**
  * Implementation to communicate to the database
- * H2 Implementation
+ * H2 Implementation.
  */
 @Service
-public class AdminServiceImpl implements AdminService{
+public class AdminServiceImpl implements AdminService {
 
     /**
-     * Repository to have us be able to communicate with the database
+     * Repository to have us be able to communicate with the database.
      */
     private AdminRepository adminRepository;
 
     /**
-     * Setter for admin to use for testing
+     * Setter for admin to use for testing.
      * @param adminRepository
      */
     @Autowired
-    public void setAdminRepository (AdminRepository adminRepository){
+    public void setAdminRepository(AdminRepository adminRepository) {
         this.adminRepository = adminRepository;
     }
 
     /**
-     * Creates a list of all the buildings and list them
+     * Creates a list of all the buildings and list them.
      * @return all the building in the database
      */
     @Override
@@ -36,7 +36,7 @@ public class AdminServiceImpl implements AdminService{
     }
 
     /**
-     * find the admin by id
+     * find the admin by id.
      * @param id - id number for the admins we are looking for.
      * @return
      */
@@ -46,7 +46,7 @@ public class AdminServiceImpl implements AdminService{
     }
 
     /**
-     * Save the admin to the database
+     * Save the admin to the database.
      * @param admin - save the id
      * @return the saved admin
      */
@@ -56,7 +56,7 @@ public class AdminServiceImpl implements AdminService{
     }
 
     /**
-     * Delete a user from the database using id
+     * Delete a user from the database using id.
      * @param id - remove the id
      */
     @Override

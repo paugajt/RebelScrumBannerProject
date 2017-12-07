@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * enrollment controller.
+ */
 @Controller
 public class EnrollmentController {
     /**
@@ -17,16 +20,17 @@ public class EnrollmentController {
     private EnrollmentService enrollmentService;
 
     /**
-     * Setter for enrollmentService for mapping
+     * Setter for enrollmentService for mapping.
      * @param enrollmentService
      */
     @Autowired
-    public void setEnrollmentService(EnrollmentService enrollmentService) {this.enrollmentService = enrollmentService;}
+    public void setEnrollmentService(EnrollmentService enrollmentService) {
+        this.enrollmentService = enrollmentService; }
 
     /**
-     * Lists all of the enrollments in the database
+     * Lists all of the enrollments in the database.
      * @param model
-     * @return
+     * @return enrollments
      */
     @RequestMapping(value = "/enrollments", method = RequestMethod.GET)
     public String list(Model model) {
@@ -36,33 +40,37 @@ public class EnrollmentController {
     }
 
     /**
-     * Shows an Enrollment based on the id passed in
+     * Shows an Enrollment based on the id passed in.
      * @param id
      * @param model
-     * @return
+     * @return enrollmentshow
      */
     @RequestMapping("enrollment/{id}")
     public String showEnrollment(@PathVariable Integer id, Model model) {
-        model.addAttribute("enrollment", enrollmentService.getEnrollmentById(id));
+        model.addAttribute("enrollment",
+                enrollmentService.getEnrollmentById(id));
         return "enrollmentshow";
     }
 
     /**
-     * Pulls up the webpage form to edit the enrollment specified by the id parameter
+     * Pulls up the webpage form to edit the enrollment
+     * specified by the id parameter.
      * @param id
      * @param model
-     * @return
+     * @return enrollmentform
      */
     @RequestMapping("enrollment/edit/{id}")
-    public String edit(@PathVariable Integer id, Model model) {
-        model.addAttribute("enrollment", enrollmentService.getEnrollmentById(id));
+    public String edit(@PathVariable Integer id,
+                       Model model) {
+        model.addAttribute("enrollment",
+                enrollmentService.getEnrollmentById(id));
         return "enrollmentform";
     }
 
     /**
-     * Routes to the webpage form to create a new Enrollment
+     * Routes to the webpage form to create a new Enrollment.
      * @param model
-     * @return
+     * @return enrollmentform
      */
     @RequestMapping("enrollment/new")
     public String newEnrollment(Model model) {
@@ -72,9 +80,9 @@ public class EnrollmentController {
 
     /**
      * Saves the created enrollment and redirects to the webpage to
-     * show the enrollment details
+     * show the enrollment details.
      * @param enrollment
-     * @return
+     * @return redirect
      */
     @RequestMapping(value = "enrollment", method = RequestMethod.POST)
     public String saveEnrollment(Enrollment enrollment) {
@@ -83,9 +91,9 @@ public class EnrollmentController {
     }
 
     /**
-     * deletes the given enrollment and redirects to the enrollment list page
+     * deletes the given enrollment and redirects to the enrollment list page.
      * @param id
-     * @return
+     * @return redirect
      */
     @RequestMapping("enrollment/delete/{id}")
     public String delete(@PathVariable Integer id) {

@@ -17,17 +17,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class SemesterController {
 
     /**
-     *Services to be used by hibernate to correctly add
+     *Services to be used by hibernate to correctly add.
      * information to the database.
      */
     private SemesterService semesterService;
 
     /**
-     * Setter for courseService for mapping
+     * Setter for courseService for mapping.
      * @param semesterService
      */
     @Autowired
-    public void setSemesterService(SemesterService semesterService){
+    public void setSemesterService(SemesterService semesterService) {
         this.semesterService = semesterService;
     }
 
@@ -35,9 +35,9 @@ public class SemesterController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param model
-     * @return
+     * @return semesters
      */
-    @RequestMapping(value ="/semesters", method = RequestMethod.GET)
+    @RequestMapping(value = "/semesters", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("semesters", semesterService.listAllSemesters());
         return "semesters";
@@ -48,11 +48,11 @@ public class SemesterController {
      * new class to be store into the database.
      * @param id
      * @param model
-     * @return
+     * @return semester show
      */
 
     @RequestMapping("semester/{id}")
-    public String showCourse(@PathVariable Integer id, Model model){
+    public String showCourse(@PathVariable Integer id, Model model) {
         model.addAttribute("semester", semesterService.getSemesterById(id));
         return "semestershow";
     }
@@ -62,11 +62,11 @@ public class SemesterController {
      * new class to be store into the database.
      * @param id
      * @param model
-     * @return
+     * @return semester form
      */
 
     @RequestMapping("semester/edit/{id}")
-    public String edit(@PathVariable Integer id, Model model){
+    public String edit(@PathVariable Integer id, Model model) {
         model.addAttribute("semester", semesterService.getSemesterById(id));
         return "semesterform";
     }
@@ -75,11 +75,11 @@ public class SemesterController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param model
-     * @return
+     * @return semester form
      */
 
     @RequestMapping("semester/new")
-    public String newCourse(Model model){
+    public String newCourse(Model model) {
         model.addAttribute("semester", new Semester());
         return "semesterform";
     }
@@ -88,11 +88,11 @@ public class SemesterController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param Semester
-     * @return
+     * @return semester redirect
      */
 
     @RequestMapping(value = "semester", method = RequestMethod.POST)
-    public String saveSemester(Semester Semester){
+    public String saveSemester(Semester Semester) {
         semesterService.saveSemester(Semester);
         return "redirect:/semester/" + Semester.getSemesterYear();
     }
@@ -101,11 +101,11 @@ public class SemesterController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param id
-     * @return
+     * @return redirect
      */
 
     @RequestMapping("semester/delete/{id}")
-    public String delete(@PathVariable Integer id){
+    public String delete(@PathVariable Integer id) {
         semesterService.deleteSemester(id);
         return "redirect:/semesters";
     }

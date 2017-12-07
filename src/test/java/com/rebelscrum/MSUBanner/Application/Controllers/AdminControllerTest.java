@@ -1,63 +1,72 @@
-//package com.rebelscrum.MSUBanner.Application.Controllers;
-//
-//import org.junit.Test;
-//<<<<<<< Updated upstream
-//import org.mockito.Mock;
-//import org.springframework.beans.factory.annotation.Autowired;
-//
-//
-//import static org.junit.Assert.*;
-//import static org.mockito.Mockito.*;
-//import org.springframework.ui.Model;
-//import static org.assertj.core.api.Assertions.assertThat;
-//import org.springframework.test.context.junit4.SpringRunner;
-//
-//public class AdminControllerTest {
-//    @Autowired
-//    private AdminController controller;
-//
-//    @Mock
-//    private Model mockModel;
-//
-//    @Test
-//    public void test_admin_list() throws Exception {
-//        String test = controller.showAdmin(1,mockModel);
-//        assertThat(test).isNotNull();
-//=======
-//
-//import static org.junit.Assert.*;
-//
-//public class AdminControllerTest {
-//
-//    private AdminController test;
-//
-//    @Test
-//    public void list() throws Exception {
-//    }
-//
-//    @Test
-//    public void showAdmin() throws Exception {
-//    }
-//
-//    @Test
-//    public void edit() throws Exception {
-//    }
-//
-//    @Test
-//    public void newAdmin() throws Exception {
-//    }
-//
-//    @Test
-//    public void loginUser() throws Exception {
-//    }
-//
-//    @Test
-//    public void saveAdmin() throws Exception {
-//    }
-//
-//    @Test
-//    public void deleteAdmin() throws Exception {
-//>>>>>>> Stashed changes
-//    }
-//
-//}
+
+package com.rebelscrum.MSUBanner.Application.Controllers;
+
+import com.rebelscrum.MSUBanner.Application.Entity.Admin;
+import com.rebelscrum.MSUBanner.Application.Repository.AdminRepository;
+import com.rebelscrum.MSUBanner.Application.Services.AdminService;
+import com.rebelscrum.MSUBanner.Application.Services.AdminServiceImpl;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.web.bind.annotation.RequestMapping;
+import static org.junit.Assert.*;
+
+
+@SpringBootTest
+@AutoConfigureMockMvc
+@WebMvcTest(AdminController.class)
+public class AdminControllerTest {
+
+    AdminServiceImpl service = new AdminServiceImpl();
+
+    @Autowired
+    private MockMvc mockMvc;
+
+
+    @Autowired
+    private AdminController controller;
+    Admin testadmin = new Admin();
+
+
+    @Test
+    @RequestMapping
+    public void setAdminService() throws Exception {
+        assertNotNull("AdminService is Null",service);
+
+    }
+
+    @Test
+    public void list() throws Exception {
+    }
+
+    @Test
+    public void showAdmin() throws Exception {
+    }
+
+    @Test
+    public void edit() throws Exception {
+    }
+
+    @Test
+    public void newAdmin() throws Exception {
+    }
+
+    @Test
+    public void loginUser() throws Exception {
+    }
+
+    @Test
+    public void saveAdmin() throws Exception {
+    }
+
+    @Test
+    public void deleteAdmin() throws Exception {
+    }
+
+}

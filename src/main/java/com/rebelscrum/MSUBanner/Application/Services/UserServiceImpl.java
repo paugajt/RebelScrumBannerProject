@@ -6,26 +6,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * implementation to communicate with the database
+ * implementation to communicate with the database.
  */
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     /**
-     * repository to communicate with the database
+     * repository to communicate with the database.
      */
     private UserRepository userRepository;
 
     /**
-     * setter used for testing purposes
+     * setter used for testing purposes.
      * @param userRepository
      */
     @Autowired
-    public void setUserRepository(UserRepository userRepository){
+    public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     /**
-     * list all the users
+     * list all the users.
      * @return list of users
      */
     @Override
@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService{
     }
 
     /**
-     * find the user by id
+     * find the user by id.
      * @param id
      * @return user
      */
@@ -44,9 +44,9 @@ public class UserServiceImpl implements UserService{
     }
 
     /**
-     * save the user
+     * save the user.
      * @param user
-     * @return
+     * @return user
      */
     @Override
     public User saveUser(User user) {
@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService{
     }
 
     /**
-     * delete user from database
+     * delete user from database.
      * @param id
      */
     @Override

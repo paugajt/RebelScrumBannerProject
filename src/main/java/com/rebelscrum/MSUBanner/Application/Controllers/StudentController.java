@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * Controls the student class
+ * Controls the student class.
  */
 
 @Controller
@@ -29,7 +29,7 @@ public class StudentController {
      * @param studentService
      */
     @Autowired
-    public void setStudentService(StudentService studentService){
+    public void setStudentService(StudentService studentService) {
         this.studentService = studentService;
     }
 
@@ -37,9 +37,9 @@ public class StudentController {
      * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param model
-     * @return
+     * @return students
      */
-    @RequestMapping(value ="/students", method = RequestMethod.GET)
+    @RequestMapping(value = "/students", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("students", studentService.listAllStudents());
         return "students";
@@ -50,10 +50,10 @@ public class StudentController {
      * new class to be store into the database.
      * @param id
      * @param model
-     * @return
+     * @return student show
      */
     @RequestMapping("student/{id}")
-    public String showStudent(@PathVariable Integer id, Model model){
+    public String showStudent(@PathVariable Integer id, Model model) {
         model.addAttribute("student", studentService.getStudentById(id));
         return "studentshow";
     }
@@ -63,10 +63,10 @@ public class StudentController {
      * new class to be store into the database.
      * @param id
      * @param model
-     * @return
+     * @return student form
      */
     @RequestMapping("student/edit/{id}")
-    public String edit(@PathVariable Integer id, Model model){
+    public String edit(@PathVariable Integer id, Model model) {
         model.addAttribute("student", studentService.getStudentById(id));
         return "studentform";
     }
@@ -75,10 +75,10 @@ public class StudentController {
      * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param model
-     * @return
+     * @return student form
      */
     @RequestMapping("student/new")
-    public String newStudent(Model model){
+    public String newStudent(Model model) {
         model.addAttribute("student", new Student());
         return "studentform";
     }
@@ -88,10 +88,10 @@ public class StudentController {
      * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param student
-     * @return
+     * @return redirect
      */
     @RequestMapping(value = "student", method = RequestMethod.POST)
-    public String saveStudent(Student student){
+    public String saveStudent(Student student) {
         studentService.saveStudent(student);
         return "redirect:/student/" + student.getId();
     }
@@ -104,7 +104,7 @@ public class StudentController {
      * @return
      */
     @RequestMapping("student/delete/{id}")
-    public String delete(@PathVariable Integer id){
+    public String delete(@PathVariable Integer id) {
         studentService.deleteStudent(id);
         return "redirect:/students";
     }

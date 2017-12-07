@@ -71,12 +71,6 @@ public class AdminTest {;
     }
 
     @Test
-    public void getUserType() throws Exception {
-        Admin tester = new Admin ();
-        assertNotNull("The ID doesn't exist",tester.getUserType());
-    }
-
-    @Test
     public void getDepartment() throws Exception {
         Admin tester = new Admin ();
         assertNull("This test should pass when there is no Department", tester.getDepartment());

@@ -29,8 +29,8 @@
             <select class="enrollments" th:field="${enrollment}">
                 <option th:value="">Select a student
                 <option th:each="enrollment : ${enrollments}"
-                        th:each="${enrollment.student.firstName}+' '+${enrollment.student.lastName}"
-                        th:text="${enrollment.student.firstName}+' '+${enrollment.student.lastName}"</option>
+                        th:each="${enrollment.student.firstName}+' : '+${enrollment.student.lastName}"
+                        th:text="${enrollment.student.firstName}+' : '+${enrollment.student.lastName}"</option>
                 </option>
             </select>
         </div>

@@ -3,18 +3,18 @@ package com.rebelscrum.MSUBanner.Application.Services;
 import com.rebelscrum.MSUBanner.Application.Entity.Building;
 
 /**
- * Building interface to interact with the database
+ * Building interface to interact with the database.
  */
 public interface BuildingService {
 
     /**
-     * lists all the buildings in the database
+     * lists all the buildings in the database.
      * @return the building in the database
      */
     Iterable<Building> listAllBuildings();
 
     /**
-     * find the building by id
+     * find the building by id.
      * @param id the building id
      * @return the building
      */
@@ -22,14 +22,14 @@ public interface BuildingService {
 
 
     /**
-     * save the building to the database
+     * save the building to the database.
      * @param building save
      * @return the saved buildings
      */
     Building saveBuilding(Building building);
 
     /**
-     * delete the building from the database
+     * delete the building from the database.
      * @param id the id of the building
      */
     void deleteBuilding(Integer id);

@@ -9,19 +9,22 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 /**
- * Loads the database with the information below
+ * Loads the database with the information below.
  */
 @Component
 public class AdminLoader implements ApplicationListener<ContextRefreshedEvent> {
     /**
-     * repository to communicate with database
+     * repository to communicate with database.
      */
     private AdminRepository adminRepository;
 
+    /**
+     * logger.
+     */
     private Logger log = Logger.getLogger(AdminLoader.class);
 
     /**
-     * for testing
+     * for testing.
      * @param adminRepository
      */
     @Autowired
@@ -30,7 +33,7 @@ public class AdminLoader implements ApplicationListener<ContextRefreshedEvent> {
     }
 
     /**
-     * load the fields with this information
+     * load the fields with this information.
      * @param event
      */
     @Override
@@ -44,7 +47,5 @@ public class AdminLoader implements ApplicationListener<ContextRefreshedEvent> {
         adminRepository.save(admin);
 
         log.info("Saved Administrator -id: " + admin.getId());
-
-
     }
 }

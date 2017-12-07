@@ -6,26 +6,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Implementation to communicate with the database
+ * Implementation to communicate with the database.
  */
 @Service
-public class ProfessorServiceImpl implements ProfessorService{
+public class ProfessorServiceImpl implements ProfessorService {
     /**
-     * repository to communicate with the database
+     * repository to communicate with the database.
      */
     private ProfessorRepository professorRepository;
 
     /**
-     * setter used for testing purposes
+     * setter used for testing purposes.
      * @param professorRepository
      */
     @Autowired
-    public void setProfessorRepository(ProfessorRepository professorRepository){
+    public void setProfessorRepository(
+            ProfessorRepository professorRepository) {
         this.professorRepository = professorRepository;
     }
 
     /**
-     * list all the professors from the database
+     * list all the professors from the database.
      * @return list of professors
      */
     @Override
@@ -34,7 +35,7 @@ public class ProfessorServiceImpl implements ProfessorService{
     }
 
     /**
-     * find the professor in the database
+     * find the professor in the database.
      * @param id of professor
      * @return the professor
      */
@@ -44,7 +45,7 @@ public class ProfessorServiceImpl implements ProfessorService{
     }
 
     /**
-     * save the professor to the database
+     * save the professor to the database.
      * @param professor
      * @return the professor
      */
@@ -54,7 +55,7 @@ public class ProfessorServiceImpl implements ProfessorService{
     }
 
     /**
-     * delete the professor in the database
+     * delete the professor in the database.
      * @param id of professor
      */
     @Override

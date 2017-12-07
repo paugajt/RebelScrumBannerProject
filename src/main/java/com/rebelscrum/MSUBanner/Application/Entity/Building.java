@@ -1,7 +1,6 @@
 package com.rebelscrum.MSUBanner.Application.Entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Set;
 
 /**
@@ -9,13 +8,22 @@ import java.util.Set;
  */
 @Entity
 public class Building {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     /**
-     * Objects for building class
+     * building class.
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    /**
+     * Objects for building class.
      */
     private Integer id;
+    /**
+     * Objects for building class.
+     */
     private String buildingName;
+    /**
+     *
+     */
     @OneToMany(mappedBy = "building")
     /**
      * Database relationship.
@@ -23,34 +31,43 @@ public class Building {
     private Set<Room> roomList;
 
     /**
-     *setter for building id
+     *setter for building id.
      * @param id of building
      */
-    public  void setId(Integer id) {this.id = id;}
+    public  void setId(Integer id) {
+        this.id = id; }
 
     /**
-     *getter for building id
+     *getter for building id.
      * @return building
      */
-    public Integer getId() {return id;}
+    public Integer getId() {
+        return id; }
 
     /**
-     * setter for building name
+     * setter for building name.
      * @param buildingName
      */
-
-    public  void setBuildingName(String buildingName) {this.buildingName = buildingName;}
-
+    public  void setBuildingName(String buildingName) {
+        this.buildingName = buildingName; }
     /**
-     *getter for building name
-     * @return
+     *getter for building name.
+     * @return buildingName
      */
-    public String getBuildingName() {return buildingName;}
-
-    public void addRoom(Room room){
+    public String getBuildingName() {
+        return buildingName; }
+    /**
+     *method is executed correctly.
+     * @param room
+     */
+    public void addRoom(Room room) {
         this.roomList.add(room);
     }
-    public Set<Room> getRoomList(){
+    /**
+     *method is executed correctly.
+     * @return roomlist
+     */
+    public Set<Room> getRoomList() {
         return roomList;
     }
 
