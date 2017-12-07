@@ -41,7 +41,7 @@ public class Student extends User {
 
     /**
      * setter for enrollments list
-     * @return
+     * @return enrollments
      */
     public Set<Enrollment> getEnrollments() {
         return this.enrollments; }
