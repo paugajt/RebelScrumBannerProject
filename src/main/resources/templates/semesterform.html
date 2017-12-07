@@ -14,9 +14,9 @@
     <div>
         <form class="form-horizontal" th:object="${semester}" th:action="@{/semester}" method="post">
             <div class="form-group">
-                <label class="col-sm-2 control-label">Select a Term:</label>
+                <label class="col-sm-2 control-label">Enter a Year and Term:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{semesterTerm}"/>
+                    <input type="text" class="form-control" th:field="*{semesterYear}"/>
                 </div>
             </div>
 
