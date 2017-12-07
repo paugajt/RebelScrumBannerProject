@@ -29,9 +29,11 @@ public class Course {
     private String coReqs;
     private String semester;
 
+
     //private Building building;
     //private Room room;
 
+    private ArrayList<Course> allCourses = new ArrayList<>();
     /**
      * Set of sections in the database
      * @return
@@ -143,8 +145,6 @@ public class Course {
     public void setId(Integer id) {
         this.id = id;
     }
-
-
     /*
     public Building getBuilding() {return building;}
 
