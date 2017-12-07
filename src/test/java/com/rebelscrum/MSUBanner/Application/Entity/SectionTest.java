@@ -26,7 +26,7 @@ public class SectionTest {
     public void getCourse() throws Exception {
         Section tester = new Section ();
         Course test =new Course ();
-        test.setCourseName("Software Development");
+        test.setCourseName("Software Development0");
         test.setCoReqs("Computer org 2");
         test.setCreditLevel("Senior");
         test.setDepartment("Computer Sciences");
@@ -43,7 +43,7 @@ public class SectionTest {
     public void setCourse() throws Exception {
         Section tester = new Section ();
         Course test =new Course ();
-        test.setCourseName("Software Development");
+        test.setCourseName("Software Development1");
         test.setCoReqs("Computer org 2");
         test.setCreditLevel("Senior");
         test.setDepartment("Computer Sciences");
@@ -61,7 +61,7 @@ public class SectionTest {
         Section tester = new Section ();
         Professor test = new Professor();
         test.setFirstName("Steve");
-        test.setLastName("Beaty");
+        test.setLastName("Bety");
         test.setEmail("sbeaty@msudenver.edu");
         test.setDepartment("Computer Science");
         //test.setCurrentCourses("SW Dev, OS");
@@ -75,7 +75,7 @@ public class SectionTest {
         Section tester = new Section ();
         Professor test = new Professor();
         test.setFirstName("Steve");
-        test.setLastName("Beaty");
+        test.setLastName("Beat");
         test.setEmail("sbeaty@msudenver.edu");
         test.setDepartment("Computer Science");
         //test.setCurrentCourses("SW Dev, OS");

@@ -16,7 +16,6 @@
             <tr>
                 <th>Building ID</th>
                 <th>Building Name</th>
-                <th>Address</th>
 
                 <th>View</th>
                 <th>Edit</th>
@@ -25,13 +24,14 @@
             <tr th:each="building : ${buildings}">
                 <td th:text="${building.id}"><a href="/building/${building.id}">Building ID</a></td>
                 <td th:text="${building.buildingName}"><a href="/building/${building.buildingName}">Building</a></td>
-                <td th:text="${building.address}"><a th:href="/building/${building.address}"> Address</a> </td>
                 <td><a th:href="${ '/building/' + building.id}">View</a></td>
                 <td><a th:href="${'/building/edit/' + building.id}">Edit</a></td>
                 <td><a th:href="${'/building/delete/' + building.id}">Delete</a> </td>
             </tr>
         </table>
     </div>
+    <a th:href="${'/building/new'}"> New Building </a>
+
 </div>
 </body>
 </html>

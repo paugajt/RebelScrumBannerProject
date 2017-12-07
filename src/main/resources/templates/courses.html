@@ -14,9 +14,10 @@
         <h2>Course List</h2>
         <table class="table table-striped">
             <tr>
-                <th>CRN</th>
+                <th>ID</th>
                 <th>Course Name</th>
                 <th>Semester</th>
+                <th>Credit</th>
 
                 <th>View</th>
                 <th>Edit</th>
@@ -24,11 +25,16 @@
             </tr>
             <tr th:each="course : ${courses}">
                 <td th:text="${course.id}"><a href="/course/${course.id}">CRN</a></td>
-                <td th:text="${course.courseName}"><a th:href="/course/${course.courseName}"> Name</a> </td>
+                <td th:text="${course.courseName}"><a th:href="/course/${course.courseName}">Course Name</a> </td>
+              <!--  <td th:href="${course.timeStart}">Start Time</td>
+                <td th:href="${course.timeEnd}">End Time</td>
+                <td th:href="${course.Days}">Days</td>
+                -->
                 <td th:text="${course.semester}">Semester</td>
-                <td><a th:href="${ '/course/' + course.id}">View</a></td>
+                <td th:text="${course.creditLevel}">Credit</td>
+                <td><a th:href="${'/course/' + course.id}">View</a></td>
                 <td><a th:href="${'/course/edit/' + course.id}">Edit</a></td>
-                <td><a th:href="${'/course/delete/' + course.id}">Delete</a> </td>
+                <td><a th:href="${'/course/delete/' + course.id}">Delete</a></td>
             </tr>
         </table>
     </div>

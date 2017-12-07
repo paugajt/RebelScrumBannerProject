@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 
 public class ProfessorTest {
 
+
     @Test
     public void getFirstName() throws Exception {
         Professor tester = new Professor ();
@@ -52,12 +53,6 @@ public class ProfessorTest {
         assertNull("This test should pass when there is no  Email", tester.getEmail());
         tester.setEmail("Bob.Smit@hmsudenver.edu");
         assertNotNull("The Email doesn't exist",tester.getEmail());
-    }
-
-    @Test
-    public void getUserType() throws Exception {
-        Professor tester = new Professor ();
-        assertNotNull("The ID doesn't exist",tester.getUserType());
     }
 
 //    @Test
@@ -117,4 +112,5 @@ public class ProfessorTest {
         tester.setId(123);
         assertNotNull("The ID doesn't exist",tester.getId());
     }
+
 }

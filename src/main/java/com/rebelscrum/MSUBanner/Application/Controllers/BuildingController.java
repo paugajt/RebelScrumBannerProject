@@ -27,7 +27,7 @@ public class BuildingController {
      * @param buildingService
      */
     @Autowired
-    public void setBuildingService(BuildingService buildingService){
+    public void setBuildingService(BuildingService buildingService) {
         this.buildingService = buildingService;
     }
 
@@ -35,9 +35,9 @@ public class BuildingController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param model
-     * @return
+     * @return buildings
      */
-    @RequestMapping(value ="/buildings", method = RequestMethod.GET)
+    @RequestMapping(value = "/buildings", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("buildings", buildingService.listAllBuildings());
         return "buildings";
@@ -49,11 +49,11 @@ public class BuildingController {
      * mapped to show buildings
      * @param id
      * @param model
-     * @return
+     * @return buildingshow
      */
 
     @RequestMapping("building/{id}")
-    public String showBuilding(@PathVariable Integer id, Model model){
+    public String showBuilding(@PathVariable Integer id, Model model) {
         model.addAttribute("building", buildingService.getBuildingById(id));
         return "buildingshow";
     }
@@ -64,11 +64,11 @@ public class BuildingController {
      * mapped to update building
      * @param id
      * @param model
-     * @return
+     * @return buildingform
      */
 
     @RequestMapping("building/edit/{id}")
-    public String edit(@PathVariable Integer id, Model model){
+    public String edit(@PathVariable Integer id, Model model) {
         model.addAttribute("building", buildingService.getBuildingById(id));
         return "buildingform";
     }
@@ -78,11 +78,11 @@ public class BuildingController {
      * new class to be store into the database.
      * mapped to create building
      * @param model
-     * @return
+     * @return buildingform
      */
 
     @RequestMapping("building/new")
-    public String newBuilding(Model model){
+    public String newBuilding(Model model) {
         model.addAttribute("building", new Building());
         return "buildingform";
     }
@@ -91,14 +91,14 @@ public class BuildingController {
      * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param Building
-     * @return
+     * @return redirect:/building/
      */
 
 
     @RequestMapping(value = "building", method = RequestMethod.POST)
-    public String saveBuilding(Building Building){
-        buildingService.saveBuilding(Building);
-        return "redirect:/building/" + Building.getId();
+    public String saveBuilding(Building building) {
+        buildingService.saveBuilding(building);
+        return "redirect:/building/" + building.getId();
     }
 
     /**
@@ -106,12 +106,12 @@ public class BuildingController {
      * new class to be store into the database.
      * Will be mapped to delete
      * @param id
-     * @return
+     * @return redirect:/buildings
      */
 
 
     @RequestMapping("building/delete/{id}")
-    public String delete(@PathVariable Integer id){
+    public String delete(@PathVariable Integer id) {
         buildingService.deleteBuilding(id);
         return "redirect:/buildings";
     }

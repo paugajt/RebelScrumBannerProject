@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>RebelScrum</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/header.css" th:href="@{/css/header.css}" />
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <div th:if="${not #lists.isEmpty(enrollments)}">
+        <h2>Enrollment List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Course</th>
+                <th>Section</th>
+                <th>Student</th>
+
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="enrollment : ${enrollments}">
+                <td th:text="${enrollment.section.course.courseName}">Course</td>
+                <td th:text="${enrollment.section.sectionNumber}">Section</td>
+                <td th:text="${enrollment.student.firstName + enrollment.student.lastName}">Name</td>
+                <td><a th:href="${'/enrollment/' + enrollment.id}">View</a></td>
+                <td><a th:href="${'/enrollment/edit/' + enrollment.id}">Edit</a></td>
+                <td><a th:href="${'/enrollment/delete/' + enrollment.id}">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
