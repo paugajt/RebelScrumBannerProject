@@ -19,18 +19,18 @@
             <select class="enrollments" th:field="${enrollment}">
                 <option value="">Select a course
                 <option th:each="enrollment : ${enrollments}"
-                        th:value="${enrollment.section.course.courseName}"
-                        th:text="${enrollment.section.course.courseName}+' : '+${enrollment.section.sectionNumber}"></option>
+                        th:value="${course.courseName}"
+                        th:text="${course.courseName}+' : '+${course.section.sectionNumber}"></option>
                 </option>
             </select>
         </div>
-
+        
         <div class="col-sm-10" th:object="${enrollments}">
             <select class="enrollments" th:field="${enrollment}">
-                <option th:value="">Select a student
+                <option value="">Select a student
                 <option th:each="enrollment : ${enrollments}"
-                        th:each="${enrollment.student.firstName}+' : '+${enrollment.student.lastName}"
-                        th:text="${enrollment.student.firstName}+' : '+${enrollment.student.lastName}"</option>
+                        th:value="${enrollment.student.firstName}+' : '+${enrollment.student.lastName}"
+                        th:text="${enrollment.student.firstName}+' : '+${enrollment.student.lastName}"></option>
                 </option>
             </select>
         </div>
