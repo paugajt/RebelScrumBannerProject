@@ -32,4 +32,10 @@ public interface UserService {
      * @param id
      */
     void deleteUser(Integer id);
+
+    void save(User user);
+
+    User findByUsername(String username);
+
+
 }

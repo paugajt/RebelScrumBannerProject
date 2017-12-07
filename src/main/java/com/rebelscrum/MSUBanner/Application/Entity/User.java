@@ -43,7 +43,9 @@ public class User {
     /**
      * fields to create database table.
      */
+    private String username;
     private String password;
+    private String passwordConfirm;
 
 
     /**
@@ -104,9 +106,14 @@ public class User {
      * getter for id.
      * @return id
      */
-   public Integer getId() {
-       return id;
-   }
+   public Integer getId() {return this.id;}
+   public void setUsername(String username){ this.username = username;}
+
+   public String getUsername() {return username;}
+
+
+
+   
 
     /**
      * setter for id.
@@ -132,6 +139,8 @@ public class User {
        return userType;
    }
 
+   public String getPassword() {return password;}
+
 
     /**
      * setter for password.
@@ -140,5 +149,13 @@ public class User {
    public void setPassword(String password) {
        this.password = password; }
 
+    public String getPasswordConfirm() {
+        return passwordConfirm;
     }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
+    }
+    }
+
 
