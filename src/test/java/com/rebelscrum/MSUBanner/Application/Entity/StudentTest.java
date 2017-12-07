@@ -5,7 +5,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class StudentTest {
-    /*
     @Test
     public void getMajor() throws Exception {
         Student tester = new Student ();
@@ -100,5 +99,4 @@ public class StudentTest {
     @Test
     public void setId() throws Exception {
     }
-*/
 }

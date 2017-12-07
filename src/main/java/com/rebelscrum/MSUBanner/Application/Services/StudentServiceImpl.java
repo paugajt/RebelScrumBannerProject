@@ -6,27 +6,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * implementation to communicate with the database
+ * implementation to communicate with the database.
  */
 @Service
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
 
     /**
-     * repository to communicate with the database
+     * repository to communicate with the database.
      */
     private StudentRepository studentRepository;
 
     /**
-     * setter used for testing purposes
+     * setter used for testing purposes.
      * @param studentRepository
      */
     @Autowired
-    public void setUserRepository(StudentRepository studentRepository){
+    public void setUserRepository(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
 
     /**
-     * list all students
+     * list all students.
      * @return list of students
      */
     @Override
@@ -35,17 +35,18 @@ public class StudentServiceImpl implements StudentService{
     }
 
     /**
-     * find student by id
+     * find student by id.
      * @param id
      * @return student
      */
     @Override
-    public Student getStudentById(Integer id) { return studentRepository.findOne(id); }
+    public Student getStudentById(Integer id) {
+        return studentRepository.findOne(id); }
 
     /**
-     * save student to database
+     * save student to database.
      * @param student
-     * @return
+     * @return student
      */
     @Override
     public Student saveStudent(Student student) {
@@ -53,7 +54,7 @@ public class StudentServiceImpl implements StudentService{
     }
 
     /**
-     * delete student from database
+     * delete student from database.
      * @param id
      */
     @Override

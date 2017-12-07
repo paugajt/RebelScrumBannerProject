@@ -10,25 +10,29 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 /**
- * Loads the database with the information below
+ * Loads the database with the information below.
  */
 @Component
 public class BuildingLoader implements ApplicationListener<ContextRefreshedEvent> {
     /**
-     * repository to communicate with database
+     * repository to communicate with database.
      */
     private BuildingRepository buildingRepository;
+  /**
+   * logger.
+   */
     private Logger log = Logger.getLogger(BuildingLoader.class);
 
     /**
-     * for testing
+     * for testing.
      * @param buildingRepository
      */
     @Autowired
-    public void setBuildingRepository(BuildingRepository buildingRepository) {this.buildingRepository = buildingRepository;}
+    public void setBuildingRepository(BuildingRepository buildingRepository) {
+      this.buildingRepository = buildingRepository; }
 
     /**
-     * load the fields with this information
+     * load the fields with this information.
      * @param event
      */
     @Override

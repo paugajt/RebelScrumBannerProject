@@ -9,27 +9,31 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import org.apache.log4j.Logger;
 /**
- * Loads the database with the information below
+ * Loads the database with the information below.
  */
 @Component
-public class SectionLoader implements ApplicationListener<ContextRefreshedEvent> {
+public class SectionLoader implements
+        ApplicationListener<ContextRefreshedEvent> {
 
     /**
-     * repository to communicate with database
+     * repository to communicate with database.
      */
     private SectionRepository sectionRepository;
-
+    /**
+     * logger.
+     */
     private Logger log = Logger.getLogger(SectionLoader.class);
 
     /**
-     * for testing
+     * for testing.
      * @param sectionRepository
      */
     @Autowired
-    public void setSectionRepository(SectionRepository sectionRepository) {this.sectionRepository = sectionRepository;}
+    public void setSectionRepository(SectionRepository sectionRepository) {
+        this.sectionRepository = sectionRepository; }
 
     /**
-     * load the fields with this information
+     * load the fields with this information.
      * @param event
      */
     @Override

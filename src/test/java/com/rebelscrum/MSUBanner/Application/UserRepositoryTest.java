@@ -10,9 +10,9 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @SpringBootTest(classes = MsuBannerApplication.class)
 @WebAppConfiguration
 public class UserRepositoryTest {
-
-    @Test
-    public void contextLoads() {
-
-    }
+//
+//    @Test
+//    public void contextLoads() {
+//
+//    }
 }

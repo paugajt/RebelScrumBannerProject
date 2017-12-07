@@ -3,44 +3,59 @@ package com.rebelscrum.MSUBanner.Application.Entity;
 import javax.persistence.*;
 
 /**
- * implementation to create database for users
+ * implementation to create database for users.
  */
 @Entity
-@Table(name="USER")
+@Table(name = "USER")
 public class User {
     /**
-     * fields to create database table
+     * fields to create database table.
      */
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="USER_ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "USER_ID")
     private Integer id;
 
-    @Column(name="FIRST_NAME")
+    /**
+     * fields to create database table.
+     */
+    @Column(name = "FIRST_NAME")
     private String firstName;
 
-    @Column(name="LAST_NAME")
+    /**
+     * fields to create database table.
+     */
+    @Column(name = "LAST_NAME")
     private String lastName;
 
-    @Column(name="EMAIL")
+    /**
+     * fields to create database table.
+     */
+    @Column(name = "EMAIL")
     private String email;
 
-    @Column(name="USER_TYPE")
+    /**
+     * fields to create database table.
+     */
+    @Column(name = "USER_TYPE")
     private String userType;
 
+    /**
+     * fields to create database table.
+     */
     private String password;
 
 
     /**
-     * getter for first name
-     * @return
+     * getter for first name.
+     * @return first name
      */
    public String getFirstName() {
        return firstName;
    }
 
     /**
-     * setter for first name
+     * setter for first name.
      * @param firstName
      */
    public void setFirstName(String firstName) {
@@ -48,15 +63,15 @@ public class User {
    }
 
     /**
-     * getter for last name
-     * @return
+     * getter for last name.
+     * @return lastName
      */
    public String getLastName() {
        return lastName;
    }
 
     /**
-     * setter for last name
+     * setter for last name.
      * @param lastName
      */
    public void setLastName(String lastName) {
@@ -64,37 +79,37 @@ public class User {
    }
 
     /**
-     * getter for email
-     * @return
+     * getter for email.
+     * @return email
      */
    public String getEmail() {
        return email;
    }
 
     /**
-     * setter for email
+     * setter for email.
      * @param email
      */
    public void setEmail(String email) {
 
-       if (email.contains("@")){
+       if (email.contains("@")) {
            this.email = email;
        }
-       else
-           this.email = null;
+       else {
+           this.email = null; }
 
    }
 
     /**
-     * getter for id
-     * @return
+     * getter for id.
+     * @return id
      */
-   public Integer getId(){
+   public Integer getId() {
        return id;
    }
 
     /**
-     * setter for id
+     * setter for id.
      * @param id
      */
    public void setId(Integer id) {
@@ -102,7 +117,7 @@ public class User {
    }
 
     /**
-     * setter for user type
+     * setter for user type.
      * @param userType
      */
    public void setUserType(String userType) {
@@ -110,8 +125,8 @@ public class User {
    }
 
     /**
-     * getter for user type
-     * @return
+     * getter for user type.
+     * @return user type
      */
    public String getUserType() {
        return userType;
@@ -119,10 +134,11 @@ public class User {
 
 
     /**
-     * setter for password
+     * setter for password.
      * @param password
      */
-   public void setPassword(String password) {this.password = password;}
+   public void setPassword(String password) {
+       this.password = password; }
 
     }
 

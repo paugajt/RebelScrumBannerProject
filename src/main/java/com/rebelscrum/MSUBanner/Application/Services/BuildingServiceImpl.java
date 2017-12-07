@@ -6,27 +6,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Implementation to communicate to the database
+ * Implementation to communicate to the database.
  */
 @Service
 public class BuildingServiceImpl implements BuildingService {
 
     /**
-     * Repository used to communicate with the database
+     * Repository used to communicate with the database.
      */
     private BuildingRepository buildingRepository;
 
     /**
-     * Setter for building to be used for testing purposes
+     * Setter for building to be used for testing purposes.
      * @param buildingRepository
      */
     @Autowired
-    public void setBuildingRepository(BuildingRepository buildingRepository){
+    public void setBuildingRepository(BuildingRepository buildingRepository) {
         this.buildingRepository = buildingRepository;
     }
 
     /**
-     * show all the buildings in the database
+     * show all the buildings in the database.
      * @return the list of all the buildings
      */
     @Override
@@ -35,7 +35,7 @@ public class BuildingServiceImpl implements BuildingService {
     }
 
     /**
-     * find the building using the id
+     * find the building using the id.
      * @param id the building id
      * @return the building
      */
@@ -45,7 +45,7 @@ public class BuildingServiceImpl implements BuildingService {
     }
 
     /**
-     * save the building to the database
+     * save the building to the database.
      * @param building save building
      * @return the saved building
      */
@@ -55,7 +55,7 @@ public class BuildingServiceImpl implements BuildingService {
     }
 
     /**
-     * delete the building from the database using the id
+     * delete the building from the database using the id.
      * @param id delete the id of the building
      */
     @Override

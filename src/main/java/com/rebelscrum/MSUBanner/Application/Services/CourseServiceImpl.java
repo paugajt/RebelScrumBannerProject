@@ -6,26 +6,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Implementation to communicate with the database
+ * Implementation to communicate with the database.
  */
 @Service
 public class CourseServiceImpl implements CourseService {
     /**
-     * repository to communicate with the database
+     * repository to communicate with the database.
      */
     private CourseRepository courseRepository;
 
     /**
-     * setter used for testing purposes
+     * setter used for testing purposes.
      * @param courseRepository
      */
     @Autowired
-    public void setCourseRepository(CourseRepository courseRepository){
+    public void setCourseRepository(CourseRepository courseRepository) {
         this.courseRepository = courseRepository;
     }
 
     /**
-     * list all the courses in the database
+     * list all the courses in the database.
      * @return the list of all courses
      */
     @Override
@@ -34,7 +34,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     /**
-     * find the course in the database
+     * find the course in the database.
      * @param id of the course
      * @return the course
      */
@@ -44,7 +44,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     /**
-     * save the course to the database
+     * save the course to the database.
      * @param course
      * @return the course
      */
@@ -54,7 +54,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     /**
-     * delete the course
+     * delete the course.
      * @param id to delete
      */
     @Override

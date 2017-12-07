@@ -15,20 +15,21 @@ import org.springframework.stereotype.Component;
 public class RoomLoader implements ApplicationListener<ContextRefreshedEvent> {
 
     /**
-     * repository to communicate with database
+     * repository to communicate with database.
      */
     private RoomRepository roomRepository;
     private Logger log = Logger.getLogger(RoomLoader.class);
 
     /**
-     * for testing
+     * for testing.
      * @param roomRepository
      */
     @Autowired
-    public void setRoomRepository(RoomRepository roomRepository) {this.roomRepository = roomRepository;}
+    public void setRoomRepository(RoomRepository roomRepository) {
+        this.roomRepository = roomRepository; }
 
     /**
-     * load the fields with this information
+     * load the fields with this information.
      * @param event
      */
     @Override

@@ -6,27 +6,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * implementation to communicate with the database
+ * implementation to communicate with the database.
  */
 @Service
 public class RoomServiceImpl implements RoomService {
     /**
-     * repository to communicate with the database
+     * repository to communicate with the database.
      */
     private RoomRepository roomRepository;
 
     /**
-     * setter used for testing purposes
+     * setter used for testing purposes.
      * @param roomRepository
      */
     @Autowired
-    public void setRoomRepository(RoomRepository roomRepository){
+    public void setRoomRepository(RoomRepository roomRepository) {
         this.roomRepository = roomRepository;
     }
 
     /**
-     * list all the rooms from the database
-     * @return
+     * list all the rooms from the database.
+     * @return all rooms
      */
     @Override
     public Iterable<Room> listAllRooms() {
@@ -34,7 +34,7 @@ public class RoomServiceImpl implements RoomService {
     }
 
     /**
-     * find the room in the database
+     * find the room in the database.
      * @param id of room
      * @return room
      */
@@ -44,7 +44,7 @@ public class RoomServiceImpl implements RoomService {
     }
 
     /**
-     * save the room to the database
+     * save the room to the database.
      * @param room
      * @return room
      */
@@ -54,7 +54,7 @@ public class RoomServiceImpl implements RoomService {
     }
 
     /**
-     * delete the room from the database
+     * delete the room from the database.
      * @param id of room
      */
     @Override

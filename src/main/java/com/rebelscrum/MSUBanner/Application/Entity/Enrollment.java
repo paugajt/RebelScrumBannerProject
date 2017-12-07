@@ -3,36 +3,86 @@ package com.rebelscrum.MSUBanner.Application.Entity;
 
 import javax.persistence.*;
 
+/**
+ * Enrollment functions.
+ */
 @Entity
 public class Enrollment {
 
+    /**
+     * @param id
+     */
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    /**
+     *
+     */
     @ManyToOne
     @JoinColumn(name = "section_id")
     private Section section;
 
+    /**
+     *
+     */
     @ManyToOne
     @JoinColumn(name = "student_id")
     private Student student;
 
+    /**
+     *
+     */
     @ManyToOne
     @JoinColumn(name = "semester_id")
     private Semester semester;
 
-    public void setId(Integer id) {this.id = id;}
-    public Integer getId() {return this.id;}
+    /**
+     *@param id
+     */
+    public void setId(Integer id) {
+        this.id = id; }
 
-    public void setSection(Section section) {this.section = section;}
-    public Section getSection() {return this.section;}
+    /**
+     * @return id
+     */
+    public Integer getId() {
+        return this.id; }
 
-    public void setStudent(Student student) {this.student = student;}
-    public Student getStudent() {return this.student;}
+    /**
+     *@param section
+     */
+    public void setSection(Section section) {
+        this.section = section; }
+    /**
+     * @return section
+     */
+    public Section getSection() {
+        return this.section; }
 
-    public void setSemester(Semester semester) {this.semester = semester;}
-    public Semester getSemester() {return this.semester;}
+    /**
+     *@param student
+     */
+    public void setStudent(Student student) {
+        this.student = student; }
+
+    /**
+     * @return student
+     */
+    public Student getStudent() {
+        return this.student; }
+
+    /**
+     *@param semester
+     */
+    public void setSemester(Semester semester) {
+        this.semester = semester; }
+
+    /**
+     * @return semestre
+     */
+    public Semester getSemester() {
+        return this.semester; }
 
 
 }

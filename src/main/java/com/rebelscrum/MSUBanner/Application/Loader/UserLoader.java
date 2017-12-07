@@ -9,19 +9,21 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 /**
- * Loads the database with the information below
+ * Loads the database with the information below.
  */
 @Component
 public class UserLoader implements ApplicationListener<ContextRefreshedEvent> {
     /**
-     * repository to communicate with database
+     * repository to communicate with database.
      */
     private UserRepository userRepository;
-
+    /**
+     * logger.
+     */
     private Logger log = Logger.getLogger(UserLoader.class);
 
     /**
-     * for testing
+     * for testing.
      * @param userRepository
      */
     @Autowired
@@ -30,7 +32,7 @@ public class UserLoader implements ApplicationListener<ContextRefreshedEvent> {
     }
 
     /**
-     * load the fields with this information
+     * load the fields with this information.
      * @param event
      */
     @Override

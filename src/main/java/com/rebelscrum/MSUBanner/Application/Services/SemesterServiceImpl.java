@@ -6,27 +6,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * implementation to communicate with the database
+ * implementation to communicate with the database.
  */
 @Service
-public class SemesterServiceImpl implements SemesterService{
+public class SemesterServiceImpl implements SemesterService {
 
     /**
-     * repository to communicate with database
+     * repository to communicate with database.
      */
     private SemesterRepository semesterRepository;
 
     /**
-     * setter used for testing purposes
+     * setter used for testing purposes.
      * @param semesterRepository
      */
     @Autowired
-    public void setSemesterRepository(SemesterRepository semesterRepository){
+    public void setSemesterRepository(SemesterRepository semesterRepository) {
         this.semesterRepository = semesterRepository;
     }
 
     /**
-     * list all semesters
+     * list all semesters.
      * @return list of semesters
      */
     @Override
@@ -35,7 +35,7 @@ public class SemesterServiceImpl implements SemesterService{
     }
 
     /**
-     * find semester
+     * find semester.
      * @param id of semester
      * @return semester
      */
@@ -45,17 +45,19 @@ public class SemesterServiceImpl implements SemesterService{
     }
 
     /**
-     * save semester
+     * save semester.
      * @param semester
      * @return semester
      */
     @Override
-    public Semester saveSemester(Semester semester) { return semesterRepository.save(semester);}
+    public Semester saveSemester(Semester semester) {
+        return semesterRepository.save(semester); }
 
     /**
-     * delete semester
+     * delete semester.
      * @param id
      */
     @Override
-    public void deleteSemester(Integer id) { semesterRepository.delete(id);}
+    public void deleteSemester(Integer id) {
+        semesterRepository.delete(id); }
 }

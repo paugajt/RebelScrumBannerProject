@@ -6,143 +6,185 @@ import java.util.Set;
 import java.util.ArrayList;
 
 /**
- * course class with fields to implement into database
+ * course class with fields to implement into database.
  */
 @Entity
 public class Course {
+    /**
+     *
+     */
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "course_id", nullable = false)
     /**
-     * all fields and parameters for courses
+     * all fields and parameters for courses.
      */
     private Integer id;
-    
+    /**
+     *
+     */
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    /**
+     *
+     */
     private Set<Section> sections;
-
+    /**
+     *
+     */
     private String courseName;
+    /**
+     *
+     */
     private String department;
+    /**
+     *
+     */
     private String creditLevel;
+    /**
+     *
+     */
     private String description;
+    /**
+     *
+     */
     private String learningObjectives;
+    /**
+     *
+     */
     private String coReqs;
+    /**
+     *
+     */
     private String semester;
 
     //private Building building;
     //private Room room;
 
     /**
-     * Set of sections in the database
-     * @return
+     * Set of sections in the database.
+     * @return sections
      */
-    public Set<Section> getSections() {return sections;}
+    public Set<Section> getSections() {
+        return sections; }
 
     /**
-     * setter for section
+     * setter for section.
      * @param sections
      */
-    public void setSections(Set<Section> sections) {this.sections = sections;}
+    public void setSections(Set<Section> sections) {
+        this.sections = sections; }
 
     /**
-     * setter for course name
+     * setter for course name.
      * @param courseName
      */
-    public  void setCourseName(String courseName) {this.courseName = courseName;}
+    public  void setCourseName(String courseName) {
+        this.courseName = courseName; }
 
     /**
-     * getter for course name
-     * @return
+     * getter for course name.
+     * @return courseName
      */
-    public String getCourseName() {return courseName;}
+    public String getCourseName() {
+        return courseName; }
 
     /**
-     * setter for department
+     * setter for department.
      * @param department
      */
-    public void setDepartment(String department) {this.department = department;}
+    public void setDepartment(String department) {
+        this.department = department; }
 
     /**
-     * getter for department
-     * @return
+     * getter for department.
+     * @return department
      */
-    public String getDepartment() {return department;}
+    public String getDepartment() {
+        return department; }
 
     /**
-     * setter for creditlevel
+     * setter for creditlevel.
      * @param creditLevel
      */
-    public void setCreditLevel(String creditLevel) {this.creditLevel = creditLevel;}
+    public void setCreditLevel(String creditLevel) {
+        this.creditLevel = creditLevel; }
 
     /**
-     * getter for credit level
-     * @return
+     * getter for credit level.
+     * @return credit level
      */
-    public String getCreditLevel() {return creditLevel;}
+    public String getCreditLevel() {
+        return creditLevel; }
 
     /**
-     * setter for description
+     * setter for description.
      * @param description
      */
-    public void setDescription(String description) {this.description = description;}
+    public void setDescription(String description) {
+        this.description = description; }
 
     /**
-     * getter for description
-     * @return
+     * getter for description.
+     * @return description
      */
-    public String getDescription() {return description;}
+    public String getDescription() {
+        return description; }
 
     /**
-     * setter for learning
+     * setter for learning.
      * @param learningObjectives
      */
-    public void setLearningObjectives(String learningObjectives) {this.learningObjectives = learningObjectives;}
+    public void setLearningObjectives(String learningObjectives) {
+        this.learningObjectives = learningObjectives; }
 
     /**
-     * getter for learning
-     * @return
+     * getter for learning.
+     * @return learning objectives
      */
-    public String getLearningObjectives() {return learningObjectives;}
+    public String getLearningObjectives() {
+        return learningObjectives; }
 
     /**
-     * setter for coreqs
+     * setter for coreqs.
      * @param coReqs
      */
-    public void setCoReqs(String coReqs) { this.coReqs = coReqs;}
+    public void setCoReqs(String coReqs) {
+        this.coReqs = coReqs; }
 
     /**
-     * getter for coreqs
-     * @return
+     * getter for coreqs.
+     * @return coreqs
      */
-    public String getCoReqs() {return coReqs;}
+    public String getCoReqs() {
+        return coReqs; }
 
     /**
-     * setter for semester
+     * setter for semester.
      * @param semester
      */
-    public void setSemester(String semester) { this.semester = semester;}
+    public void setSemester(String semester) {
+        this.semester = semester; }
 
     /**
-     * getter for semester
-     * @return
+     * getter for semester.
+     * @return semester
      */
-    public String getSemester() {return semester;}
+    public String getSemester() {
+        return semester; }
 
     /**
-     * getter for id
-     * @return
+     * getter for id.
+     * @return id
      */
-    public Integer getId(){
-        return id;
-    }
+    public Integer getId() {
+        return id; }
 
     /**
-     * setter for id
+     * setter for id.
      * @param id
      */
     public void setId(Integer id) {
-        this.id = id;
-    }
+        this.id = id; }
 
 
     /*
@@ -175,13 +217,14 @@ public class Course {
                 checkDays = false;
             }
 
-            if (!(courseToAdd.getTimeStart() > allCourses.get(i).getTimeStart()) &&
-		!(courseToAdd.getTimeEnd() < allCourses.get(i).getTimeEnd())){
-                checkTimes = false;
-            }
+            if (!(courseToAdd.getTimeStart() >
+            allCourses.get(i).getTimeStart()) &&!(courseToAdd.getTimeEnd()
+            < allCourses.get(i).getTimeEnd())){
+                checkTimes = false; }
 
-            if ((courseToAdd.getBuilding() == allCourses.get(i).getBuilding()) &&
-		(courseToAdd.getRoom() == allCourses.get(i).getRoom())){
+            if ((courseToAdd.getBuilding() ==
+            allCourses.get(i).getBuilding()) && (courseToAdd.getRoom() ==
+            allCourses.get(i).getRoom())){
                 checkRooms = false;
 
             }

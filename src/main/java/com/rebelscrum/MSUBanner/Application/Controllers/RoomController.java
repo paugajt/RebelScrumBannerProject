@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * Checks for rooms and room services
+ * Checks for rooms and room services.
  */
 @Controller
 public class RoomController {
@@ -27,7 +27,7 @@ public class RoomController {
      * @param roomService
      */
     @Autowired
-    public void setRoomService(RoomService roomService){
+    public void setRoomService(RoomService roomService) {
         this.roomService = roomService;
     }
 
@@ -35,9 +35,9 @@ public class RoomController {
      *  * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param model
-     * @return
+     * @return room
      */
-    @RequestMapping(value ="/room", method = RequestMethod.GET)
+    @RequestMapping(value = "/room", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("room", roomService.listAllRooms());
         return "room";
@@ -49,10 +49,10 @@ public class RoomController {
      * new class to be store into the database.
      * @param id
      * @param model
-     * @return
+     * @return roomshow
      */
     @RequestMapping("room/{id}")
-    public String showRoom(@PathVariable Integer id, Model model){
+    public String showRoom(@PathVariable Integer id, Model model) {
         model.addAttribute("room", roomService.getRoomById(id));
         return "roomshow";
     }
@@ -63,10 +63,10 @@ public class RoomController {
      * new class to be store into the database.
      * @param id
      * @param model
-     * @return
+     * @return room form
      */
     @RequestMapping("room/edit/{id}")
-    public String edit(@PathVariable Integer id, Model model){
+    public String edit(@PathVariable Integer id, Model model) {
         model.addAttribute("room", roomService.getRoomById(id));
         return "roomform";
     }
@@ -75,10 +75,10 @@ public class RoomController {
      *  * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param model
-     * @return
+     * @return building
      */
     @RequestMapping("room/new")
-    public String newBuilding(Model model){
+    public String newBuilding(Model model) {
         model.addAttribute("room", new Room());
         return "roomform";
     }
@@ -88,10 +88,10 @@ public class RoomController {
      *  * * Will pull information from the webpages to create a
      * new class to be store into the database.
      * @param room
-     * @return
+     * @return redirect
      */
     @RequestMapping(value = "room", method = RequestMethod.POST)
-    public String saveRoom(Room room){
+    public String saveRoom(Room room) {
         roomService.saveRoom(room);
         return "redirect:/room/" + room.getId();
     }
@@ -104,7 +104,7 @@ public class RoomController {
      * @return
      */
     @RequestMapping("room/delete/{id}")
-    public String delete(@PathVariable Integer id){
+    public String delete(@PathVariable Integer id) {
         roomService.deleteRoom(id);
         return "redirect:/room";
     }
