@@ -134,4 +134,5 @@ public class CourseTest {
         tester.setId(123);
         assertNotNull("The ID doesn't exist",tester.getId());
     }
+
 }

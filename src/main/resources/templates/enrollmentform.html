@@ -16,11 +16,15 @@
             <input type="hidden" th:field="*{id}"/>
 
             <div class="form-group">
-                <label class="col-sm-2 control-lavel">Course:</label>
+                <label class="col-sm-2 control-label">Course:</label>
                 <div class="col-sm-10">
-                    <select name="courses" th:field="*{course}">
-                        <option value=""
-                    </select>
+                    <div th:if="${courseList != null and not #lists.isEmpty(courseList)}">
+                        <select th:field="*{course}">
+                            <option th:each="course : ${courseList}"
+                                    th:value="${course.id}"
+                                    th:text="${course.courseName}" />
+                        </select>
+                    </div>
                 </div>
             </div>
         </form>

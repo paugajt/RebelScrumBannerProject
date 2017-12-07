@@ -2,6 +2,7 @@ package com.rebelscrum.MSUBanner.Application.Entity;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Enrollment {
@@ -21,6 +22,7 @@ public class Enrollment {
     @ManyToOne
     @JoinColumn(name = "semester_id")
     private Semester semester;
+
 
     public void setId(Integer id) {this.id = id;}
     public Integer getId() {return this.id;}

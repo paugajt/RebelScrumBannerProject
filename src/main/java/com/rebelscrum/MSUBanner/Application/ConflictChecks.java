@@ -1,11 +1,7 @@
 package com.rebelscrum.MSUBanner.Application;
-
 import com.rebelscrum.MSUBanner.Application.Entity.Schedule;
 import com.rebelscrum.MSUBanner.Application.Entity.Section;
-
 public class ConflictChecks {
-
-    
 
     //Checks time and day conflicts for course to be added against courses already in course list
     public boolean conflicts(Section courseToAdd){
@@ -17,16 +13,13 @@ public class ConflictChecks {
             if (courseToAdd.getDays() != sectionList[i].getDays()){
                 checkDays = false;
             }
-
             if (!(courseToAdd.getTimeStart() > sectionList[i].getTimeStart()) &&
                     !(courseToAdd.getTimeEnd() < sectionList[i].getTimeEnd())){
                 checkTimes = false;
             }
-
             if (checkDays && checkTimes){
                 return true;
             }
-
         }
         return false;
     }
