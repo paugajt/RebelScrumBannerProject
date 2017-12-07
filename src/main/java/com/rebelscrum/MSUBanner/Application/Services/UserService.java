@@ -11,4 +11,10 @@ public interface UserService {
     User saveUser(User user);
 
     void deleteUser(Integer id);
+
+    void save(User user);
+
+    User findByUsername(String username);
+
+
 }
