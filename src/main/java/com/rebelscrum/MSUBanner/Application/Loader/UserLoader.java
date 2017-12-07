@@ -27,6 +27,7 @@ public class UserLoader implements ApplicationListener<ContextRefreshedEvent> {
         test.setEmail("jpauga@msudenver.edu");
         test.setUserType("test");
         test.setPassword("password");
+        test.setUsername("test");
 
         userRepository.save(test);
 
